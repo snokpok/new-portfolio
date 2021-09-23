@@ -1,5 +1,4 @@
 import React from "react";
-import CharAvatar from "../../images/me-avatar-char.jpeg";
 import Socials from "../Miscs/Socials";
 
 function IntroductionHeader() {
@@ -14,7 +13,7 @@ function IntroductionHeader() {
       </div>
       <div className="flex flex-col py-5 justify-center items-center sm:w-full md:w-1/3">
         <img
-          src={CharAvatar}
+          src={`images/me-avatar-char.jpeg`}
           alt="Character"
           className="w-52 h-52 rounded-full"
         />

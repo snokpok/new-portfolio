@@ -5,6 +5,8 @@ export interface IProjectItem {
   description: string;
   link?: string;
   linkLabel?: string;
+  key: string;
+  imgFormat: string;
 }
 
 interface Props {
@@ -14,7 +16,11 @@ interface Props {
 function ProjectItem({ project }: Props) {
   return (
     <div className="flex flex-col max-w-xl border-2 m-6 w-96 rounded-lg xl:hover:rotate-3 xl:hover:scale-105 transform duration-150">
-      <div className="w-full bg-white">hello</div>
+      <img
+        src={`projects/${project.key}.${project.imgFormat}`}
+        alt={`Project ${project.key}`}
+        className="rounded-t-md"
+      />
       <div className="flex flex-col p-7 pt-1 h-full">
         <div className="font-bold font-mono border-b-2 p-2 text-xl xl:text-2xl md:text-3xl">
           {project.name}
