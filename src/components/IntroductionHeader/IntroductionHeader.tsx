@@ -7,7 +7,8 @@ function IntroductionHeader() {
       <div className="flex flex-col items-center justify-center m-0 md:w-2/3 sm:w-full space-y-3">
         <div className="mx-8 text-7xl font-bold text-center">Vincent Vu</div>
         <div className="text-center md:text-4xl lg:text-2xl xl:text-lg mx-8">
-          Software engineer with passion for backend development 👨‍💻
+          Software engineer with a passion for building great scalable products
+          👨‍💻
         </div>
         <Socials />
       </div>

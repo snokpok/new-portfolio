@@ -24,7 +24,7 @@ function Experiences() {
 
   return (
     <div className="flex flex-col mt-8">
-      <div className="flex flex-col items-center text-4xl font-bold">
+      <div className="text-4xl font-bold text-center">
         💻 Places I have worked at
       </div>
       <div className="flex flex-col w-full items-center ">
