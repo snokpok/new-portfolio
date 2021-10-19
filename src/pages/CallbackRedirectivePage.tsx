@@ -1,15 +1,18 @@
 import React from "react";
-import { Redirect, useLocation } from "react-router";
+import { Redirect } from "react-router";
 import { originalCallbackURL } from "../common/data";
 import { requestToken } from "../common/functions/spotifyFunctions";
 import { UserContext } from "../common/user.context";
 
 function CallbackRedirectivePage() {
-  let query = new URLSearchParams(useLocation().search);
   const { setUser } = React.useContext(UserContext);
   const [startRedirect, setStartRedirect] = React.useState(false);
+  let query = React.useMemo(
+    () => new URLSearchParams(window.location.search),
+    []
+  );
 
-  React.useEffect(() => {
+  const handleQueryParseAuth = React.useCallback(() => {
     if (!query.get("code")) {
       alert("please accept the permissions");
     } else {
@@ -31,7 +34,11 @@ function CallbackRedirectivePage() {
         }
       );
     }
-  }, []);
+  }, [query, setUser]);
+
+  React.useEffect(() => {
+    handleQueryParseAuth();
+  }, [handleQueryParseAuth]);
 
   return (
     <div>

@@ -31,7 +31,7 @@ function SpotifyCPWidget() {
       1000 * REFETCH_INTERVAL_SECS
     );
     return () => clearInterval(intervalRefetch);
-  }, []);
+  }, [handleFetchCurrentlyPlaying]);
 
   const artistsText =
     currentlyPlayingData.item &&
