@@ -1,3 +1,4 @@
+import { DEV } from "./env";
 import { IExperienceItem } from "./interfaces";
 
 export const RESUME_LINK =
@@ -60,3 +61,8 @@ export const socialLinks = {
   instagram: "https://www.instagram.com/_vmvu/",
   email: "mailto:vinceny.fe@gmail.com",
 };
+
+export const ACCESS_TOKEN =
+  "BQAy2LY1dZW5SNCOxNwLjoCKAW-gUCfuuL356bRTF9zGvpaDzKoCIT8IBaJ92gIWkXYcd_inZjsjprODaxVfutNfPOwoiEh1GOAKFq6268ltZ6roqmHMkjG_l2Atro8PFUoiqcA7vmIgDo7CtisiRI1mEOfczySRNsHhoJemxMRy_4l7QwRqn3DRyL7RmRkc5coNdaH583xMrr73_rm50x0kkCjTkc7C0yDYuZUFFA";
+
+export const originalCallbackURL = `http://${window.location.host}/callback`;

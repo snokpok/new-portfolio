@@ -2,14 +2,35 @@ import React from "react";
 import { getCurrentlyPlayingTrack } from "../../common/queries";
 import Marquee from "react-fast-marquee";
 import { FaSpotify } from "react-icons/fa";
+import { UserContext } from "../../common/user.context";
+import { refreshToken } from "../../common/functions/spotifyFunctions";
+import { REFETCH_INTERVAL_SECS } from "../../common/env";
 
 function SpotifyCPWidget() {
   const [currentlyPlayingData, setCPD] = React.useState<any>({});
+  const { user, setUser } = React.useContext(UserContext);
+
+  const handleFetchCurrentlyPlaying = React.useCallback(() => {
+    getCurrentlyPlayingTrack(user?.accessToken ?? "")
+      .then((res) => {
+        setCPD(res.data);
+      })
+      .catch(async (reason) => {
+        // try to refresh the token here
+        if (user.refreshToken) {
+          const { data } = await refreshToken(user.refreshToken);
+          setUser((prev) => ({ ...prev, accessToken: data["access_token"] }));
+        }
+      });
+  }, [user, setUser]);
 
   React.useEffect(() => {
-    getCurrentlyPlayingTrack().then((data) => {
-      setCPD(data);
-    });
+    handleFetchCurrentlyPlaying();
+    const intervalRefetch = setInterval(
+      () => handleFetchCurrentlyPlaying(),
+      1000 * REFETCH_INTERVAL_SECS
+    );
+    return () => clearInterval(intervalRefetch);
   }, []);
 
   const artistsText =
@@ -27,15 +48,16 @@ function SpotifyCPWidget() {
           <FaSpotify
             className={`text-4xl ${
               currentlyPlayingData.item ? "text-green-500" : "text-gray-500"
-            } bg-black rounded-full`}
+            } bg-black rounded-full animate-bounce`}
           />
         </a>
       </div>
       {currentlyPlayingData.item ? (
         <>
-          <div className="border-2 rounded-md">
+          <div>
             {currentlyPlayingData.item && (
               <img
+                className="border-2 rounded-md"
                 src={
                   currentlyPlayingData.item.album.images[
                     currentlyPlayingData.item.album.images.length - 1
@@ -50,7 +72,7 @@ function SpotifyCPWidget() {
               {currentlyPlayingData.item && currentlyPlayingData.item.name}
             </div>
             <div className="max-w-sm">
-              <Marquee pauseOnHover={true} gradientWidth={0}>
+              <Marquee gradientWidth={0} pauseOnHover={true}>
                 {artistsText}
               </Marquee>
             </div>
