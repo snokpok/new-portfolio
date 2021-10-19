@@ -1,14 +1,5 @@
 import React from "react";
-
-export interface IExperienceItem {
-  corp: string;
-  duration?: {
-    from: string;
-    to: string;
-  };
-  position: string;
-  description: string[];
-}
+import { IExperienceItem } from "../../common/interfaces";
 
 interface Props {
   experience: IExperienceItem;
@@ -16,17 +7,23 @@ interface Props {
 
 function ExperienceItem({ experience }: Props) {
   return (
-    <div className="flex flex-col border-b w-96 my-4 p-8 items-center">
-      <div className="text-center font-extrabold text-3xl font-serif">
-        {experience.corp}
-      </div>
-      <div>..</div>
-      <div className="italic">{experience.position}</div>
-      <div>..</div>
-      <div>
-        {experience.description.map((d) => (
-          <li>{d}</li>
-        ))}
+    <div className="flex w-96 py-4 space-x-4">
+      <a href={experience.link ?? ""} rel="noreferrer" target="_blank">
+        <div>
+          {experience.logo && (
+            <img
+              src={experience.logo}
+              width={90}
+              height={90}
+              className="rounded-lg"
+              alt={experience.corp + " logo"}
+            />
+          )}
+        </div>
+      </a>
+      <div className="flex flex-col justify-center">
+        <div className="font-extrabold text-3xl">{experience.corp}</div>
+        <div className="italic">{experience.position}</div>
       </div>
     </div>
   );

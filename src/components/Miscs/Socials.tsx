@@ -1,22 +1,51 @@
 import React from "react";
-import { AiFillGithub, AiFillLinkedin, AiFillInstagram } from "react-icons/ai";
+import {
+  AiOutlineMail,
+  AiFillGithub,
+  AiFillLinkedin,
+  AiFillInstagram,
+} from "react-icons/ai";
+import { socialLinks } from "../../common/data";
 
 function Socials() {
-  const links = {
-    linkedin: "https://linkedin.com/in/vmvu",
-    github: "https://github.com/snokpok",
-    instagram: "https://www.instagram.com/_vmvu/",
-  };
   return (
-    <div className="flex space-x-1 text-6xl md:text-4xl">
-      <a href={links.github} target="_blank" rel="noreferrer">
-        <AiFillGithub />
-      </a>
-      <a href={links.linkedin} target="_blank" rel="noreferrer">
-        <AiFillLinkedin />
-      </a>
-      <a href={links.instagram} target="_blank" rel="noreferrer">
-        <AiFillInstagram />
+    <div className="flex flex-col items-center text-6xl md:text-4xl space-y-4">
+      <div className="flex space-x-1">
+        <a
+          href={socialLinks.github}
+          target="_blank"
+          rel="noreferrer"
+          className="hover:scale-110 transform transition"
+        >
+          <AiFillGithub />
+        </a>
+        <a
+          href={socialLinks.linkedin}
+          target="_blank"
+          rel="noreferrer"
+          className="hover:scale-110 transform transition"
+        >
+          <AiFillLinkedin />
+        </a>
+        <a
+          href={socialLinks.instagram}
+          target="_blank"
+          rel="noreferrer"
+          className="hover:scale-110 transform transition"
+        >
+          <AiFillInstagram />
+        </a>
+      </div>
+      <a
+        href={socialLinks.email}
+        target="_blank"
+        rel="noreferrer"
+        className="border-2 rounded-md hover:scale-110 hover:bg-white hover:text-black transform transition"
+      >
+        <div className="flex items-center p-4">
+          <AiOutlineMail />
+          <div className="ml-2 text-lg font-extrabold">Contact me!</div>
+        </div>
       </a>
     </div>
   );

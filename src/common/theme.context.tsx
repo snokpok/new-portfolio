@@ -4,12 +4,12 @@ export interface ThemeState {
   darkMode: boolean;
 }
 
-interface ThemeStateContext {
+interface ThemeStateContextInterface {
   theme: ThemeState;
   setTheme: React.Dispatch<React.SetStateAction<ThemeState>>;
 }
 
-export const ThemeContext = React.createContext<ThemeStateContext>({
+export const ThemeStateContext = React.createContext<ThemeStateContextInterface>({
   theme: { darkMode: true },
   setTheme: () => {},
 });

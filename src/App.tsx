@@ -1,39 +1,39 @@
 import React, { ReactElement } from "react";
 import { Helmet } from "react-helmet";
+import { Route, Switch } from "react-router";
 import "./App.css";
-import { ThemeContext, ThemeState } from "./common/theme.context";
-import Experiences from "./components/Experiences/Experiences";
-import IntroductionHeader from "./components/IntroductionHeader/IntroductionHeader";
-import Projects from "./components/Projects/Projects";
-import { RiMoonClearFill } from "react-icons/ri";
+import { ThemeStateContext, ThemeState } from "./common/theme.context";
+import Navbar from "./components/Navbar/Navbar";
+import AboutMePage from "./pages/AboutMePage";
+import HomePage from "./pages/HomePage";
 
 function App(): ReactElement {
   const [theme, setTheme] = React.useState<ThemeState>({ darkMode: true });
-
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
-      <Helmet>
-        <title>Home | Vincent Vu</title>
-      </Helmet>
+    <ThemeStateContext.Provider value={{ theme, setTheme }}>
       <div
         className={`min-w-screen min-h-screen ${
           theme.darkMode && "bg-black text-white"
         }`}
       >
-        <div className="flex flex-row-reverse w-full pt-5 px-5">
-          <RiMoonClearFill
-            className="text-3xl lg:text-2xl cursor-pointer"
-            onClick={(e) => {
-              e.preventDefault();
-              setTheme({ darkMode: !theme.darkMode });
-            }}
-          />
-        </div>
-        <IntroductionHeader />
-        <Projects />
-        <Experiences />
+        <Switch>
+          <Route exact path="/">
+            <Helmet>
+              <title>Home | Vincent Vu</title>
+            </Helmet>
+            <Navbar />
+            <HomePage />
+          </Route>
+          <Route exact path="/about">
+            <Helmet>
+              <title>About me | Vincent Vu</title>
+            </Helmet>
+            <Navbar />
+            <AboutMePage />
+          </Route>
+        </Switch>
       </div>
-    </ThemeContext.Provider>
+    </ThemeStateContext.Provider>
   );
 }
 
