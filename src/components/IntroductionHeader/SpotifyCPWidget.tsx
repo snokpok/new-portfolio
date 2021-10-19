@@ -25,13 +25,15 @@ function SpotifyCPWidget() {
   }, [user, setUser]);
 
   React.useEffect(() => {
-    handleFetchCurrentlyPlaying();
-    const intervalRefetch = setInterval(
-      () => handleFetchCurrentlyPlaying(),
-      1000 * REFETCH_INTERVAL_SECS
-    );
-    return () => clearInterval(intervalRefetch);
-  }, [handleFetchCurrentlyPlaying]);
+    if (user.accessToken && user.refreshToken) {
+      handleFetchCurrentlyPlaying();
+      const intervalRefetch = setInterval(
+        () => handleFetchCurrentlyPlaying(),
+        1000 * REFETCH_INTERVAL_SECS
+      );
+      return () => clearInterval(intervalRefetch);
+    }
+  }, [handleFetchCurrentlyPlaying, user.refreshToken, user.accessToken]);
 
   const artistsText =
     currentlyPlayingData.item &&
