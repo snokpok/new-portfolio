@@ -6,6 +6,9 @@ module.exports = {
   theme: {
     extend: {
       xs: "414px",
+      animation: {
+        "spin-slow": "spin 5s linear infinite",
+      },
       ...defaultTheme.screens,
     },
   },

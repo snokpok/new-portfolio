@@ -1,15 +1,10 @@
 import React from "react";
-import {
-  AiOutlineMail,
-  AiFillGithub,
-  AiFillLinkedin,
-  AiFillInstagram,
-} from "react-icons/ai";
+import { AiFillGithub, AiFillLinkedin, AiFillInstagram } from "react-icons/ai";
 import { socialLinks } from "../../common/data";
 
 function Socials() {
   return (
-    <div className="flex flex-col items-center text-6xl md:text-4xl space-y-4">
+    <div className="flex flex-col items-center text-6xl sm:text-4xl space-y-4">
       <div className="flex space-x-1">
         <a
           href={socialLinks.github}
@@ -36,17 +31,6 @@ function Socials() {
           <AiFillInstagram />
         </a>
       </div>
-      <a
-        href={socialLinks.email}
-        target="_blank"
-        rel="noreferrer"
-        className="border-2 rounded-md hover:scale-110 hover:bg-white hover:text-black transform transition"
-      >
-        <div className="flex items-center p-4">
-          <AiOutlineMail />
-          <div className="ml-2 text-lg font-extrabold">Contact me!</div>
-        </div>
-      </a>
     </div>
   );
 }

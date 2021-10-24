@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { originalCallbackURL, RESUME_LINK } from "../../common/data";
 import { CLIENT_ID } from "../../common/env";
 import { UserContext } from "../../common/user.context";
+import SpotifyCPWidget from "../IntroductionHeader/SpotifyCPWidget";
 import DarkModeWidget from "../Miscs/DarkModeWidget";
 
 const NavbarLink = styled.div`
@@ -24,7 +25,7 @@ function Navbar() {
 
   return (
     <div className="flex max-h-16 max-w-screen border-b-2 justify-between items-center px-2">
-      <div className="flex space-x-6 font-bold text-xl">
+      <div className="flex space-x-6 font-bold text-xl text-center">
         <Link to="/">
           <NavbarLink>Home 🏡</NavbarLink>
         </Link>
@@ -40,7 +41,12 @@ function Navbar() {
           <a href={authorizeSpotifyURL}>Authorize</a>
         </div>
       )}
-      <DarkModeWidget />
+      <div className="flex items-center">
+        <div className="hidden sm:flex">
+          <SpotifyCPWidget size="small" />
+        </div>
+        <DarkModeWidget />
+      </div>
     </div>
   );
 }

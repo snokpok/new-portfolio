@@ -6,6 +6,6 @@ export interface IExperienceItem {
     to: string;
   };
   position: string;
-  description?: string[];
+  description?: string;
   link?: string;
 }

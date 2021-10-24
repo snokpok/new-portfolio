@@ -7,7 +7,7 @@ export const getClientHeaderField = () => {
   return Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString("base64");
 };
 
-export const requestToken = async (code: string, redirectURI: string) => {
+export const requestToken = async (code: string) => {
   const res = axios({
     method: "POST",
     url: "https://accounts.spotify.com/api/token",

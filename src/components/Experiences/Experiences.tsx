@@ -4,7 +4,7 @@ import ExperienceItem from "./ExperienceItem";
 
 function Experiences() {
   return (
-    <div className="flex flex-col mt-8">
+    <div className="flex flex-col my-8 mx-4">
       <div className="text-4xl font-bold text-center mb-4">
         💻 Places I have worked at
       </div>

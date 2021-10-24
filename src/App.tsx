@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router";
 import "./App.css";
 import { ThemeStateContext, ThemeState } from "./common/theme.context";
 import { UserContext, UserState } from "./common/user.context";
+import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
 import AboutMePage from "./pages/AboutMePage";
 import CallbackRedirectivePage from "./pages/CallbackRedirectivePage";
@@ -41,6 +42,7 @@ function App(): ReactElement {
               </Helmet>
               <Navbar />
               <AboutMePage />
+              <Footer />
             </Route>
           </Switch>
         </div>

@@ -43,8 +43,10 @@ export const experiences: IExperienceItem[] = [
   {
     logo: "images/hacksc-square.jpeg",
     corp: "HackSC",
-    position: "VP, Engineering",
+    position: "Lead, Engineering",
     link: "https://hacksc.com",
+    description:
+      "Spearheaded the migration and infrastructural redesign of HackSC's current hacker dashboard platform",
   },
   {
     logo: "images/geekup-square.png",

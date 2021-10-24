@@ -1,6 +1,5 @@
 import React from "react";
 import { Redirect } from "react-router";
-import { originalCallbackURL } from "../common/data";
 import { requestToken } from "../common/functions/spotifyFunctions";
 import { UserContext } from "../common/user.context";
 
@@ -16,7 +15,7 @@ function CallbackRedirectivePage() {
     if (!query.get("code")) {
       alert("please accept the permissions");
     } else {
-      requestToken(query.get("code") as string, originalCallbackURL).then(
+      requestToken(query.get("code") as string).then(
         (res) => {
           const accessToken = res.data["access_token"];
           const refreshToken = res.data["refresh_token"];

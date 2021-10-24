@@ -7,23 +7,25 @@ interface Props {
 
 function ExperienceItem({ experience }: Props) {
   return (
-    <div className="flex w-96 py-4 space-x-4">
-      <a href={experience.link ?? ""} rel="noreferrer" target="_blank">
-        <div>
-          {experience.logo && (
+    <div className="flex w-72 md:w-96 py-4 space-x-4">
+      <div>
+        {experience.logo && (
+          <a href={experience.link ?? ""} rel="noreferrer" target="_blank">
             <img
               src={experience.logo}
+              className="rounded-lg"
               width={90}
               height={90}
-              className="rounded-lg"
               alt={experience.corp + " logo"}
             />
-          )}
-        </div>
-      </a>
-      <div className="flex flex-col justify-center">
+          </a>
+        )}
+      </div>
+      <div className="flex flex-col justify-center w-full">
         <div className="font-extrabold text-3xl">{experience.corp}</div>
         <div className="italic">{experience.position}</div>
+        <hr />
+        <div>{experience.description}</div>
       </div>
     </div>
   );
