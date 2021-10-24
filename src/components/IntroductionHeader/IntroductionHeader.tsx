@@ -1,7 +1,6 @@
 import React from "react";
 import ContactMe from "../Miscs/ContactMe";
 import Socials from "../Miscs/Socials";
-import SpotifyCPWidget from "./SpotifyCPWidget";
 
 function IntroductionHeader() {
   return (
@@ -13,7 +12,6 @@ function IntroductionHeader() {
         </div>
         <Socials />
         <ContactMe />
-        <SpotifyCPWidget />
       </div>
       <div className="flex flex-col py-5 justify-center items-center sm:w-full md:w-1/3">
         <img

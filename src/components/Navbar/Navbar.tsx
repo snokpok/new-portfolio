@@ -3,18 +3,26 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { originalCallbackURL, RESUME_LINK } from "../../common/data";
 import { CLIENT_ID } from "../../common/env";
+import { ThemeStateContext } from "../../common/theme.context";
 import { UserContext } from "../../common/user.context";
-import SpotifyCPWidget from "../IntroductionHeader/SpotifyCPWidget";
 import DarkModeWidget from "../Miscs/DarkModeWidget";
 
 const NavbarLink = styled.div`
   font-weight: 800;
 `;
 
-const ExternalLink = styled.div`
-  font-weight: 800;
-  color: cyan;
-`;
+type ExternalLinkProps = React.LinkHTMLAttributes<any>;
+const ExternalLink = (props: ExternalLinkProps) => {
+  const { theme } = React.useContext(ThemeStateContext);
+
+  return (
+    <div
+      style={{ color: theme.darkMode ? "cyan" : "darkcyan", fontWeight: 800 }}
+    >
+      {props.children}
+    </div>
+  );
+};
 
 function Navbar() {
   const { user } = React.useContext(UserContext);
@@ -36,15 +44,12 @@ function Navbar() {
           <ExternalLink>Resume 👈</ExternalLink>
         </a>
       </div>
-      {!user?.accessToken && (
+      {/* {!user?.accessToken && (
         <div>
           <a href={authorizeSpotifyURL}>Authorize</a>
         </div>
-      )}
+      )} */}
       <div className="flex items-center">
-        <div className="hidden sm:flex">
-          <SpotifyCPWidget size="small" />
-        </div>
         <DarkModeWidget />
       </div>
     </div>
