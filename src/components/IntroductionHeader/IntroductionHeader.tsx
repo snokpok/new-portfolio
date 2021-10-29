@@ -1,5 +1,7 @@
 import React from "react";
+import { avatarPaths } from "../../common/data";
 import ContactMe from "../Miscs/ContactMe";
+import PictureClickthroughs from "../Miscs/PictureClickthroughs";
 import Socials from "../Miscs/Socials";
 
 function IntroductionHeader() {
@@ -14,11 +16,7 @@ function IntroductionHeader() {
         <ContactMe />
       </div>
       <div className="flex flex-col py-5 justify-center items-center sm:w-full md:w-1/3">
-        <img
-          src={`images/me-avatar-char.jpeg`}
-          alt="Character"
-          className="w-52 h-52 rounded-full"
-        />
+        <PictureClickthroughs keyPathDict={avatarPaths} />
       </div>
     </div>
   );
