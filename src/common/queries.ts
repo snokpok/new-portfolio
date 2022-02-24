@@ -11,7 +11,7 @@ export async function getCurrentlyPlayingTrack(
       Authorization: `Bearer ${accessToken}`,
       Accept: "application/json",
     },
-    url: `${LOCALHOST_SCPGO_SERVER}/scp`,
+    url: `${SCPGO_SERVER_PROD}/scp`,
   });
   return res;
 }
