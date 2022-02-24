@@ -62,8 +62,8 @@ function StandardSpotifyCPWidgetTemplate({
   currentlyPlayingData,
 }: TemplateSpotifyCPWProps) {
   const artistsText =
-    currentlyPlayingData.item &&
-    `${currentlyPlayingData.item.artists.map((a: any) => a.name).join(", ")}`;
+    currentlyPlayingData?.item &&
+    `${currentlyPlayingData?.item.artists.map((a: any) => a.name).join(", ")}`;
   return (
     <div className="flex space-x-2 border-0 rounded-md p-1">
       <div className="flex items-center">
@@ -74,14 +74,14 @@ function StandardSpotifyCPWidgetTemplate({
         >
           <FaSpotify
             className={`text-4xl ${
-              currentlyPlayingData.item ? "text-green-500" : "text-gray-500"
+              currentlyPlayingData?.item ? "text-green-500" : "text-gray-500"
             } bg-black rounded-full ${
-              currentlyPlayingData.item ? "animate-bounce" : ""
+              currentlyPlayingData?.item ? "animate-bounce" : ""
             }`}
           />
         </a>
       </div>
-      {currentlyPlayingData.item ? (
+      {currentlyPlayingData?.item ? (
         <>
           <div>
             {currentlyPlayingData.item && (
