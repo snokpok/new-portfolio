@@ -95,6 +95,7 @@ export const avatarPaths = {
 };
 
 export const myImagesPaths = {
+  igPhoto: "images/ig-photo-2.jpg",
   me: "images/me-vincent.jpg",
   meSecond: "images/me-at-mudd.jpeg",
   linkedin: "images/linkedin-prof-photo.jpeg",
