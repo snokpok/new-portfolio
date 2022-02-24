@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 
-const LOCALHOST_SCPGO_SERVER = "http://localhost:4000";
+// const LOCALHOST_SCPGO_SERVER = "http://localhost:4000";
 const SCPGO_SERVER_PROD = "https://serene-bastion-56610.herokuapp.com";
 
 export async function getCurrentlyPlayingTrack(
