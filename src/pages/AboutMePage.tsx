@@ -1,17 +1,19 @@
 import React from "react";
-import { myImagesPaths, projectsList } from "../common/data";
+import { projectsList } from "../common/data";
 import Experiences from "../components/Experiences/Experiences";
 import { InlineLink } from "../components/Miscs/InlineLink";
-import PictureClickthroughs from "../components/Miscs/PictureClickthroughs";
 
 function AboutMePage() {
   return (
     <div className="flex flex-col items-center md:px-8">
       <div className="flex flex-col space-y-4 md:flex-row-reverse md:justify-center items-center mt-10 relative">
         <div className="mx-4">
-          <PictureClickthroughs
-            keyPathDict={myImagesPaths}
-            imageStyles="rounded-md"
+          <img
+            src="images/me-vincent.jpg"
+            width={200}
+            height={200}
+            className="rounded-md"
+            alt="My pic"
           />
         </div>
         <div className="w-3/4 sm:w-2/3 lg:w-1/3">
@@ -26,18 +28,13 @@ function AboutMePage() {
                 Listlive, a web/desktop social productivity to-do list
                 application
               </InlineLink>{" "}
-              and{" "}
-              <InlineLink href={projectsList.koseur.link} target="_blank">
-                Koseur, a nightlife application
-              </InlineLink>
-              that I built while I was still in Vietnam
-              {"\n"}
+              or something else {"\n"}
             </div>
             <div>
               I'm also passionate about helping others build out their ideas. I
               currently serve as an engineering lead organizer at HackSC. My
               focus is on maintaining and migrating the various services,
-              dashboards and devtools there
+              dashboards and devtools there.
             </div>
           </div>
         </div>

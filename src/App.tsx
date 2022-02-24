@@ -7,14 +7,15 @@ import { UserContext, UserState } from "./common/user.context";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
 import AboutMePage from "./pages/AboutMePage";
-import CallbackRedirectivePage from "./pages/CallbackRedirectivePage";
 import HomePage from "./pages/HomePage";
+
+const SCPGO_TOKEN =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlZpbmNlbnQgVnUiLCJlbWFpbCI6InZtdnVAdXNjLmVkdSIsImlzcyI6ImUyMDVmY2Q5MzJmZjRiYWRhYzI1MTc2MGY4ZDg1OWQ2In0.w_xHE2IoI9Bt0q5cOMxHfSDQnjzM7C8-WN3s4g6wDFI";
 
 function App(): ReactElement {
   const [theme, setTheme] = React.useState<ThemeState>({ darkMode: true });
   const [user, setUser] = React.useState<UserState>({
-    accessToken: null,
-    refreshToken: null,
+    accessToken: SCPGO_TOKEN,
   });
 
   return (
@@ -26,9 +27,6 @@ function App(): ReactElement {
           }`}
         >
           <Switch>
-            <Route path="/callback">
-              <CallbackRedirectivePage />
-            </Route>
             <Route exact path="/">
               <Helmet>
                 <title>Home | Vincent Vu</title>

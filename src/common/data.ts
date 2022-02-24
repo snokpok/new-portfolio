@@ -41,39 +41,18 @@ export const projectsList = {
 
 export const experiences: IExperienceItem[] = [
   {
-    logo: "images/troylabs-red.jpeg",
-    duration: {
-      from: "Oct 2021",
-      to: "Present",
-    },
-    corp: "TroyLabs",
-    position: "Engineering Member",
-    link: "https://troylabs.vc",
-    description:
-      "Building various technological tools and platforms to help other entrepreneurs build and release their own tech ventures",
-  },
-  {
     logo: "images/hacksc-square.jpeg",
-    duration: {
-      from: "Sep 2021",
-      to: "Present",
-    },
     corp: "HackSC",
-    position: "Engineering Organizer",
+    position: "Lead, Engineering",
     link: "https://hacksc.com",
     description:
-      "Spearheading the migration and infrastructural redesign of HackSC's current hacker dashboard platform",
+      "Spearheaded the migration and infrastructural redesign of HackSC's current hacker dashboard platform",
   },
   {
     logo: "images/geekup-square.png",
     corp: "GEEK Up",
     position: "Software Engineering Intern",
-    duration: {
-      from: "Mar 2021",
-      to: "May 2021",
-    },
     link: "https://geekup.vn/",
-    description: "In-house recruitment tool stuffs",
   },
 ];
 
