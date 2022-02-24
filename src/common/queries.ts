@@ -1,5 +1,8 @@
 import axios, { AxiosResponse } from "axios";
 
+const LOCALHOST_SCPGO_SERVER = "http://localhost:4000";
+const SCPGO_SERVER_PROD = "https://serene-bastion-56610.herokuapp.com";
+
 export async function getCurrentlyPlayingTrack(
   accessToken: string
 ): Promise<AxiosResponse<any>> {
@@ -8,7 +11,7 @@ export async function getCurrentlyPlayingTrack(
       Authorization: `Bearer ${accessToken}`,
       Accept: "application/json",
     },
-    url: "https://api.spotify.com/v1/me/player/currently-playing",
+    url: `${LOCALHOST_SCPGO_SERVER}/scp`,
   });
   return res;
 }

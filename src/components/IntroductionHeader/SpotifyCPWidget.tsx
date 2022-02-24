@@ -3,7 +3,6 @@ import { getCurrentlyPlayingTrack } from "../../common/queries";
 import Marquee from "react-fast-marquee";
 import { FaSpotify } from "react-icons/fa";
 import { UserContext } from "../../common/user.context";
-import { refreshToken } from "../../common/functions/spotifyFunctions";
 import { REFETCH_INTERVAL_SECS } from "../../common/env";
 
 interface TemplateSpotifyCPWProps {
@@ -129,23 +128,20 @@ interface SpotifyCPWProps {
 
 function SpotifyCPWidget({ size }: SpotifyCPWProps) {
   const [currentlyPlayingData, setCPD] = React.useState<any>({});
-  const { user, setUser } = React.useContext(UserContext);
+  const { user } = React.useContext(UserContext);
 
   const handleFetchCurrentlyPlaying = React.useCallback(() => {
-    if (user.accessToken && user.refreshToken) {
-      getCurrentlyPlayingTrack(user?.accessToken ?? "")
+    if (user.accessToken) {
+      getCurrentlyPlayingTrack(user.accessToken)
         .then((res) => {
           setCPD(res.data);
         })
-        .catch(async () => {
-          // try to refresh the token here
-          if (user.refreshToken) {
-            const { data } = await refreshToken(user.refreshToken);
-            setUser((prev) => ({ ...prev, accessToken: data["access_token"] }));
-          }
+        .catch((reason) => {
+          // pass
+          console.log(reason);
         });
     }
-  }, [user, setUser]);
+  }, [user]);
 
   React.useEffect(() => {
     handleFetchCurrentlyPlaying();

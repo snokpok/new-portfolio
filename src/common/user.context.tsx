@@ -2,7 +2,6 @@ import React from "react";
 
 export type UserState = {
   accessToken: string | null;
-  refreshToken: string | null;
 };
 
 export interface UserStateContextInterface {
@@ -13,7 +12,6 @@ export interface UserStateContextInterface {
 export const UserContext = React.createContext<UserStateContextInterface>({
   user: {
     accessToken: null,
-    refreshToken: null,
   },
   setUser: () => {},
 });
