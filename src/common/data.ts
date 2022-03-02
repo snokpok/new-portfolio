@@ -43,16 +43,62 @@ export const experiences: IExperienceItem[] = [
   {
     logo: "images/hacksc-square.jpeg",
     corp: "HackSC",
-    position: "Lead, Engineering",
+    position: "VP, Engineering",
     link: "https://hacksc.com",
     description:
-      "Spearheaded the migration and infrastructural redesign of HackSC's current hacker dashboard platform",
+      "Spearheading the migration and infrastructural redesign of HackSC's current hacker dashboard platform",
+    duration: {
+      from: "Sep 2021",
+      to: "Present",
+    },
   },
   {
-    logo: "images/geekup-square.png",
+    logo: "images/meetsee-app.jpeg",
+    corp: "Meetsee",
+    position: "Software Engineer",
+    link: "https://meetseeapp.com",
+    description:
+      "Developing Bluetooth-enabled meeting-matching algorithm, scaling our backend infrastructure, CI/CDs + doing some mobile UI/UX development where needed",
+    duration: {
+      from: "Feb 2022",
+      to: "Present",
+    },
+  },
+  {
+    logo: "images/troylabs-red.jpeg",
+    corp: "TroyLabs",
+    position: "Engineering Member",
+    link: "https://troylabs.vc",
+    description:
+      "Consulting early-stage technology startups, creating various tools and dashboards for internal use",
+    duration: {
+      from: "Oct 2021",
+      to: "Present",
+    },
+  },
+  {
+    logo: "images/terathought.jpeg",
+    corp: "TeraThought",
+    position: "Framework Engineer",
+    link: "https://terathought.com",
+    description:
+      "Working on various Kotlin internal frameworks and tools for the company's products",
+    duration: {
+      from: "Feb 2022",
+      to: "Present",
+    },
+  },
+  {
+    logo: "images/geekup-lny-square.jpg",
     corp: "GEEK Up",
     position: "Software Engineering Intern",
     link: "https://geekup.vn/",
+    description:
+      "Built an in-house recruitment platform for the company in an agile, cross-functional environment",
+    duration: {
+      from: "Mar 2021",
+      to: "May 2021",
+    },
   },
 ];
 
