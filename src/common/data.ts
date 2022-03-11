@@ -58,7 +58,7 @@ export const experiences: IExperienceItem[] = [
     position: "Software Engineer",
     link: "https://meetseeapp.com",
     description:
-      "Developing Bluetooth-enabled meeting-matching algorithm, scaling our backend infrastructure, CI/CDs + doing some mobile UI/UX development where needed",
+      "Developing in-person meeting-matching algorithm, scaling our backend infrastructure, CI/CDs + doing some mobile UI/UX development where needed",
     duration: {
       from: "Feb 2022",
       to: "Present",
@@ -73,18 +73,6 @@ export const experiences: IExperienceItem[] = [
       "Consulting early-stage technology startups, creating various tools and dashboards for internal use",
     duration: {
       from: "Oct 2021",
-      to: "Present",
-    },
-  },
-  {
-    logo: "images/terathought.jpeg",
-    corp: "TeraThought",
-    position: "Framework Engineer",
-    link: "https://terathought.com",
-    description:
-      "Working on various Kotlin internal frameworks and tools for the company's products",
-    duration: {
-      from: "Feb 2022",
       to: "Present",
     },
   },
