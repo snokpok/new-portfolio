@@ -4,6 +4,14 @@ export const RESUME_LINK =
   "https://docs.google.com/document/d/1IVcw8C8h8BjvmJzcXDvOO2mok98a2nvMmFQ-3nxgfzQ/edit?usp=sharing";
 
 export const projectsList = {
+  scp: {
+    name: "Spotify Currently Playing",
+    description:
+      "An API to easily get what you're currently playing on Spotify. Built with React.js and Golang on MongoDB. You should be looking at this app's demo right now whenever I jam :)",
+    link: "https://scp.vuvincent.com",
+    key: "scp",
+    imgFormat: "png",
+  },
   listlive: {
     name: "Listlive: Making Productivity Social",
     description:
