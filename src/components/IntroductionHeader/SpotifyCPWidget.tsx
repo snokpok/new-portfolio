@@ -76,7 +76,7 @@ function StandardSpotifyCPWidgetTemplate({
             className={`text-4xl ${
               currentlyPlayingData?.item ? "text-green-500" : "text-gray-500"
             } bg-black rounded-full ${
-              currentlyPlayingData?.item ? "animate-bounce" : ""
+              currentlyPlayingData?.is_playing ? "animate-bounce" : ""
             }`}
           />
         </a>
@@ -91,7 +91,11 @@ function StandardSpotifyCPWidgetTemplate({
                 rel="noreferrer"
               >
                 <img
-                  className="border-2 animate-spin-slow duration-700 rounded-full"
+                  className={`border-2 ${
+                    currentlyPlayingData?.is_playing
+                      ? "animate-spin-slow duration-700"
+                      : ""
+                  } rounded-full`}
                   src={
                     currentlyPlayingData.item.album.images[
                       currentlyPlayingData.item.album.images.length - 1
