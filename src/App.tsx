@@ -5,6 +5,7 @@ import "./App.css";
 import { ThemeStateContext, ThemeState } from "./common/theme.context";
 import { UserContext, UserState } from "./common/user.context";
 import Footer from "./components/Footer/Footer";
+import SpotifyCPWidget from "./components/IntroductionHeader/SpotifyCPWidget";
 import Navbar from "./components/Navbar/Navbar";
 import AboutMePage from "./pages/AboutMePage";
 import HomePage from "./pages/HomePage";
@@ -38,7 +39,7 @@ function App(): ReactElement {
               <Helmet>
                 <title>About me | Vincent Vu</title>
               </Helmet>
-              <Navbar />
+              <Navbar extraElems={<SpotifyCPWidget size="small" />} />
               <AboutMePage />
               <Footer />
             </Route>
