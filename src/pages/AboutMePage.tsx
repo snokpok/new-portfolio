@@ -23,12 +23,11 @@ function AboutMePage() {
               I'm Vincent Vu, currently studying Computer Science at the
               University of Southern California. My interest lies in building
               new products and watching them to fruition. I'm building various
-              apps in my free time, a few notable ones include{" "}
+              apps in my free time, notable ones include{" "}
               <InlineLink href={projectsList.listlive.link} target="_blank">
                 Listlive, a web/desktop social productivity to-do list
                 application
               </InlineLink>{" "}
-              or something else {"\n"}
             </div>
             <div>
               I'm also passionate about helping others build out their ideas. I

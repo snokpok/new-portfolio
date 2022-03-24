@@ -4,6 +4,14 @@ export const RESUME_LINK =
   "https://docs.google.com/document/d/1IVcw8C8h8BjvmJzcXDvOO2mok98a2nvMmFQ-3nxgfzQ/edit?usp=sharing";
 
 export const projectsList = {
+  scp: {
+    name: "Spotify Currently Playing",
+    description:
+      "An API to easily get what you're currently playing on Spotify. Built with React.js and Golang on MongoDB. You should be looking at this app's demo right now whenever I jam :)",
+    link: "https://scp.vuvincent.com",
+    key: "scp",
+    imgFormat: "png",
+  },
   listlive: {
     name: "Listlive: Making Productivity Social",
     description:
@@ -58,7 +66,7 @@ export const experiences: IExperienceItem[] = [
     position: "Software Engineer",
     link: "https://meetseeapp.com",
     description:
-      "Developing Bluetooth-enabled meeting-matching algorithm, scaling our backend infrastructure, CI/CDs + doing some mobile UI/UX development where needed",
+      "Developing in-person meeting-matching algorithm, scaling our backend infrastructure, CI/CDs + doing some mobile UI/UX development where needed",
     duration: {
       from: "Feb 2022",
       to: "Present",
@@ -73,18 +81,6 @@ export const experiences: IExperienceItem[] = [
       "Consulting early-stage technology startups, creating various tools and dashboards for internal use",
     duration: {
       from: "Oct 2021",
-      to: "Present",
-    },
-  },
-  {
-    logo: "images/terathought.jpeg",
-    corp: "TeraThought",
-    position: "Framework Engineer",
-    link: "https://terathought.com",
-    description:
-      "Working on various Kotlin internal frameworks and tools for the company's products",
-    duration: {
-      from: "Feb 2022",
       to: "Present",
     },
   },
