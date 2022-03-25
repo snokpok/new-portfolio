@@ -24,14 +24,14 @@ function SmallSpotifyCPWidgetTemplate({
         >
           <FaSpotify
             className={`${extraSmall ? "text-xl" : "text-3xl"} ${
-              currentlyPlayingData.item ? "text-green-500" : "text-gray-500"
+              currentlyPlayingData?.item ? "text-green-500" : "text-gray-500"
             } bg-black rounded-full ${
-              currentlyPlayingData.item ? "animate-pulse" : ""
-            } ${currentlyPlayingData.item ? "absolute inset-x-2.5" : ""} z-10`}
+              currentlyPlayingData?.item ? "animate-pulse" : ""
+            } ${currentlyPlayingData?.item ? "absolute inset-x-2.5" : ""} z-10`}
           />
         </a>
       </div>
-      {currentlyPlayingData.item ? (
+      {currentlyPlayingData?.item ? (
         <>
           <div>
             {currentlyPlayingData.item && (
