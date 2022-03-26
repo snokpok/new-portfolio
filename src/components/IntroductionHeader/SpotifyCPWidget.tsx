@@ -132,17 +132,30 @@ interface SpotifyCPWProps {
 
 function SpotifyCPWidget({ size }: SpotifyCPWProps) {
   const [currentlyPlayingData, setCPD] = React.useState<any>({});
+  const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState<any>();
   const { user } = React.useContext(UserContext);
+  const [dots, setDots] = React.useState("");
+
+  const NUM_LOAD_DOTS_MAX = 4;
 
   const handleFetchCurrentlyPlaying = React.useCallback(() => {
     if (user.accessToken) {
+      const timer = setInterval(() => {
+        setDots((prev) => (prev.length >= NUM_LOAD_DOTS_MAX ? "" : prev + "."));
+      }, 1000);
       getCurrentlyPlayingTrack(user.accessToken)
         .then((res) => {
           setCPD(res.data);
         })
         .catch((reason) => {
           // pass
-          console.log(reason);
+          setError(reason);
+        })
+        .finally(() => {
+          setLoading(false);
+          // clear interval ticking
+          clearInterval(timer);
         });
     }
   }, [user]);
@@ -155,6 +168,24 @@ function SpotifyCPWidget({ size }: SpotifyCPWProps) {
     );
     return () => clearInterval(intervalRefetch);
   }, [handleFetchCurrentlyPlaying]);
+
+  if (loading) {
+    return <p className="text-gray-400 italic">Loading{dots}</p>;
+  }
+
+  const errorMsg = "Oops, something went wrong. No music today I guess :(";
+
+  if (error)
+    return (
+      <div className="flex items-center space-x-2 flex-wrap p-4 justify-center">
+        <FaSpotify
+          className={`${
+            size === "small" ? "text-xl" : "text-3xl"
+          } bg-black rounded-full text-red-600`}
+        />
+        {size !== "small" && <p className="text-red-600">{errorMsg}</p>}
+      </div>
+    );
 
   if (size === "small")
     return (

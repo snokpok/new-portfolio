@@ -15,7 +15,10 @@ interface Props {
 
 function ProjectItem({ project }: Props) {
   return (
-    <div className="flex flex-col max-w-xl border-2 m-6 w-96 rounded-lg xl:hover:rotate-3 xl:hover:scale-105 transform duration-150">
+    <div
+      key={project.key}
+      className="flex flex-col max-w-xl border-2 m-6 w-96 rounded-lg xl:hover:rotate-3 xl:hover:scale-105 transform duration-150"
+    >
       <img
         src={`projects/${project.key}.${project.imgFormat}`}
         alt={`Project ${project.key}`}
