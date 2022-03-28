@@ -33,14 +33,18 @@ function App(): ReactElement {
                 <title>Home | Vincent Vu</title>
               </Helmet>
               <Navbar />
-              <HomePage />
+              <div className="py-20">
+                <HomePage />
+              </div>
             </Route>
             <Route exact path="/about">
               <Helmet>
                 <title>About me | Vincent Vu</title>
               </Helmet>
               <Navbar extraElems={<SpotifyCPWidget size="small" />} />
-              <AboutMePage />
+              <div className="py-16">
+                <AboutMePage />
+              </div>
               <Footer />
             </Route>
           </Switch>

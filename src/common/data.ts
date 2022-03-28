@@ -2,6 +2,7 @@ import { IExperienceItem } from "./interfaces";
 
 export const RESUME_LINK =
   "https://docs.google.com/document/d/1IVcw8C8h8BjvmJzcXDvOO2mok98a2nvMmFQ-3nxgfzQ/edit?usp=sharing";
+export const BLOG_LINK = "https://blog.vuvincent.com";
 
 export const projectsList = {
   scp: {
@@ -54,7 +55,7 @@ export const experiences: IExperienceItem[] = [
     position: "VP, Engineering",
     link: "https://hacksc.com",
     description:
-      "Spearheading the migration and infrastructural redesign of HackSC's current hacker dashboard platform",
+      "Spearheading development of our technological tools and infrastructures of USC's flagship hackathon. Building and rebuilding various services such as our custom-made team formation web platform and hacker-personalized dashboard used by 500+ hackers.",
     duration: {
       from: "Sep 2021",
       to: "Present",
