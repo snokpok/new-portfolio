@@ -13,7 +13,7 @@ function ExperienceItem({ experience }: Props) {
           <a href={experience.link ?? ""} rel="noreferrer" target="_blank">
             <img
               src={experience.logo}
-              className="rounded-lg"
+              className="p-1 rounded-lg bg-white"
               width={90}
               height={90}
               alt={experience.corp + " logo"}

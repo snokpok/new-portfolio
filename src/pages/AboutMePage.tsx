@@ -31,9 +31,9 @@ function AboutMePage() {
             </div>
             <div>
               I'm also passionate about helping others build out their ideas. I
-              currently serve as an engineering lead organizer at HackSC. My
-              focus is on maintaining and migrating the various services,
-              dashboards and devtools there.
+              currently serve as the VP of engineering at HackSC. My focus is on
+              maintaining and migrating the various services, dashboards and
+              devtools there.
             </div>
           </div>
         </div>

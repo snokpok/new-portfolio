@@ -62,6 +62,18 @@ export const experiences: IExperienceItem[] = [
     },
   },
   {
+    logo: "images/icaros.svg",
+    corp: "Interactive and Collaborative Autonomous Robotics (ICAROS) Lab",
+    position: "Undergraduate Researcher",
+    link: "https://icaros.usc.edu/",
+    description:
+      "Helping to develop Pyribs--a quality-diversity optimization library",
+    duration: {
+      from: "Nov 2021",
+      to: "Present",
+    },
+  },
+  {
     logo: "images/meetsee-app.jpeg",
     corp: "Meetsee",
     position: "Software Engineer",
