@@ -50,6 +50,16 @@ export const projectsList = {
 
 export const experiences: IExperienceItem[] = [
   {
+    logo: "images/coursera.png",
+    corp: "Coursera",
+    position: "Software Engineering Intern",
+    link: "https://coursera.org",
+    duration: {
+      from: "May 2022",
+      to: "Aug 2022",
+    },
+  },
+  {
     logo: "images/hacksc-square.jpeg",
     corp: "HackSC",
     position: "VP, Engineering",

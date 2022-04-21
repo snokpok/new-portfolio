@@ -1,4 +1,3 @@
-import React from "react";
 import { IExperienceItem } from "../../common/interfaces";
 
 interface Props {
@@ -7,8 +6,8 @@ interface Props {
 
 function ExperienceItem({ experience }: Props) {
   return (
-    <div className="flex w-72 md:w-7/12 py-4 space-x-4">
-      <div>
+    <div className="flex flex-col items-center py-4 space-x-4 sm:flex-row">
+      <div className="my-2">
         {experience.logo && (
           <a href={experience.link ?? ""} rel="noreferrer" target="_blank">
             <img
@@ -21,7 +20,7 @@ function ExperienceItem({ experience }: Props) {
           </a>
         )}
       </div>
-      <div className="flex flex-col justify-center w-full">
+      <div className="flex flex-col justify-center w-full text-center sm:text-left">
         <div className="font-extrabold text-3xl">{experience.corp}</div>
         <div className="italic">{experience.position}</div>
         {experience.duration && (

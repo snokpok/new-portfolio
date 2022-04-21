@@ -9,7 +9,8 @@ interface ThemeStateContextInterface {
   setTheme: React.Dispatch<React.SetStateAction<ThemeState>>;
 }
 
-export const ThemeStateContext = React.createContext<ThemeStateContextInterface>({
-  theme: { darkMode: true },
-  setTheme: () => {},
-});
+export const ThemeStateContext =
+  React.createContext<ThemeStateContextInterface>({
+    theme: { darkMode: true },
+    setTheme: () => {},
+  });
