@@ -55,8 +55,8 @@ export const experiences: IExperienceItem[] = [
     position: "Software Engineering Intern",
     link: "https://coursera.org",
     duration: {
-      from: "May 2022",
-      to: "Aug 2022",
+      from: new Date("May 2022"),
+      to: new Date("Aug 2022"),
     },
   },
   {
@@ -67,20 +67,20 @@ export const experiences: IExperienceItem[] = [
     description:
       "Spearheading development of our technological tools and infrastructures of USC's flagship hackathon. Building and rebuilding various services such as our custom-made team formation web platform and hacker-personalized dashboard used by 500+ hackers.",
     duration: {
-      from: "Sep 2021",
-      to: "Present",
+      from: new Date("Sep 2021"),
+      to: new Date(),
     },
   },
   {
     logo: "images/icaros.svg",
     corp: "Interactive and Collaborative Autonomous Robotics (ICAROS) Lab",
-    position: "Undergraduate Researcher",
+    position: "Undergraduate Research Assistant",
     link: "https://icaros.usc.edu/",
     description:
       "Helping to develop Pyribs--a quality-diversity optimization library",
     duration: {
-      from: "Nov 2021",
-      to: "Present",
+      from: new Date("Nov 2021"),
+      to: new Date(),
     },
   },
   {
@@ -91,8 +91,8 @@ export const experiences: IExperienceItem[] = [
     description:
       "Developing in-person meeting-matching algorithm, scaling our backend infrastructure, CI/CDs + doing some mobile UI/UX development where needed",
     duration: {
-      from: "Feb 2022",
-      to: "Present",
+      from: new Date("Feb 2022"),
+      to: new Date(),
     },
   },
   {
@@ -103,8 +103,8 @@ export const experiences: IExperienceItem[] = [
     description:
       "Consulting early-stage technology startups, creating various tools and dashboards for internal use",
     duration: {
-      from: "Oct 2021",
-      to: "Present",
+      from: new Date("Oct 2021"),
+      to: new Date(),
     },
   },
   {
@@ -115,8 +115,8 @@ export const experiences: IExperienceItem[] = [
     description:
       "Built an in-house recruitment platform for the company in an agile, cross-functional environment",
     duration: {
-      from: "Mar 2021",
-      to: "May 2021",
+      from: new Date("Mar 2021"),
+      to: new Date("May 2021"),
     },
   },
 ];

@@ -1,4 +1,5 @@
 import { IExperienceItem } from "../../common/interfaces";
+import moment from 'moment'
 
 interface Props {
   experience: IExperienceItem;
@@ -25,7 +26,7 @@ function ExperienceItem({ experience }: Props) {
         <div className="italic">{experience.position}</div>
         {experience.duration && (
           <div>
-            {experience.duration?.from} - {experience.duration?.to}
+            {moment(experience.duration.from).format("MMM YYYY")} - {moment(experience.duration?.to).format("MMM YYYY")}
           </div>
         )}
         <hr />
