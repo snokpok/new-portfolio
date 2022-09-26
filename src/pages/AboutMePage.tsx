@@ -1,17 +1,14 @@
-import React from "react";
-import { projectsList } from "../common/data";
 import Experiences from "../components/Experiences/Experiences";
-import { InlineLink } from "../components/Miscs/InlineLink";
 
 function AboutMePage() {
   return (
-    <div className="flex flex-col items-center md:px-8">
+    <div className="flex flex-col px-0 items-center md:items-start">
       <div className="flex flex-col space-y-4 md:flex-row-reverse md:justify-center items-center mt-10 relative">
         <div className="mx-4">
           <img
-            src="images/me-vincent.jpg"
-            width={200}
-            height={200}
+            src="images/linkedin-headshot.jpeg"
+            width={250}
+            height={250}
             className="rounded-md"
             alt="My pic"
           />
@@ -22,23 +19,22 @@ function AboutMePage() {
             <div>
               I'm Vincent Vu, currently studying Computer Science at the
               University of Southern California. My interest lies in building
-              new products and watching them to fruition. I'm building various
-              apps in my free time, notable ones include{" "}
-              <InlineLink href={projectsList.listlive.link} target="_blank">
-                Listlive, a web/desktop social productivity to-do list
-                application
-              </InlineLink>{" "}
+              new products and watching them to fruition.
             </div>
             <div>
               I'm also passionate about helping others build out their ideas. I
-              currently serve as the VP of engineering at HackSC. My focus is on
-              maintaining and migrating the various services, dashboards and
-              devtools there.
+              currently serve as the lead of engineering at HackSC. My focus is
+              on building and maintaining the innovative services, dashboards
+              and devtools that revolutionizes the hackathon experience.
             </div>
           </div>
         </div>
       </div>
-      <Experiences />
+      <div className="w-full flex flex-col space-y-4 md:flex-row-reverse md:justify-center items-center mt-10 relative">
+        <div className="md:w-1/2">
+          <Experiences />
+        </div>
+      </div>
     </div>
   );
 }

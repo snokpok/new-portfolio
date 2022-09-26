@@ -53,6 +53,8 @@ export const experiences: IExperienceItem[] = [
     logo: "images/coursera.png",
     corp: "Coursera",
     position: "Software Engineering Intern",
+    description: `Worked in the Platform Foundations team on our internal
+      Role-Based-Access-Control (RBAC) authorization system`,
     link: "https://coursera.org",
     duration: {
       from: new Date("May 2022"),
@@ -60,12 +62,31 @@ export const experiences: IExperienceItem[] = [
     },
   },
   {
+    logo: "images/geekup-lny-square.jpg",
+    corp: "GEEK Up",
+    position: "Software Engineering Intern",
+    link: "https://geekup.vn/",
+    description: `Built an in-house recruitment platform for the company in an agile,
+      cross-functional environment`,
+    duration: {
+      from: new Date("Mar 2021"),
+      to: new Date("May 2021"),
+    },
+  },
+];
+
+export const involvements: IExperienceItem[] = [
+  {
     logo: "images/hacksc-square.jpeg",
     corp: "HackSC",
-    position: "VP, Engineering",
+    position: "Lead of Engineering",
     link: "https://hacksc.com",
-    description:
-      "Spearheading development of our technological tools and infrastructures of USC's flagship hackathon. Building and rebuilding various services such as our custom-made team formation web platform and hacker-personalized dashboard used by 500+ hackers.",
+    description: `
+      Spearheading development of our technological tools and infrastructures of
+      USC's flagship hackathon. Building and rebuilding various services such as
+      our custom-made team formation web platform and hacker-personalized
+      dashboard used by 1000+ hackers.
+    `,
     duration: {
       from: new Date("Sep 2021"),
       to: new Date(),
@@ -76,23 +97,10 @@ export const experiences: IExperienceItem[] = [
     corp: "Interactive and Collaborative Autonomous Robotics (ICAROS) Lab",
     position: "Undergraduate Research Assistant",
     link: "https://icaros.usc.edu/",
-    description:
-      "Helping to develop Pyribs--a quality-diversity optimization library",
+    description: "Developing Pyribs--a quality-diversity optimization library",
     duration: {
       from: new Date("Nov 2021"),
-      to: new Date(),
-    },
-  },
-  {
-    logo: "images/meetsee-app.jpeg",
-    corp: "Meetsee",
-    position: "Software Engineer",
-    link: "https://meetseeapp.com",
-    description:
-      "Developing in-person meeting-matching algorithm, scaling our backend infrastructure, CI/CDs + doing some mobile UI/UX development where needed",
-    duration: {
-      from: new Date("Feb 2022"),
-      to: new Date(),
+      to: new Date("Sep 2022"),
     },
   },
   {
@@ -104,19 +112,20 @@ export const experiences: IExperienceItem[] = [
       "Consulting early-stage technology startups, creating various tools and dashboards for internal use",
     duration: {
       from: new Date("Oct 2021"),
-      to: new Date(),
+      to: new Date("May 2022"),
     },
   },
   {
-    logo: "images/geekup-lny-square.jpg",
-    corp: "GEEK Up",
-    position: "Software Engineering Intern",
-    link: "https://geekup.vn/",
-    description:
-      "Built an in-house recruitment platform for the company in an agile, cross-functional environment",
+    logo: "images/meetsee-app.jpeg",
+    corp: "Meetsee",
+    position: "Software Engineer",
+    link: "https://meetseeapp.com",
+    description: `Developing in-person meeting-matching algorithm, scaling our backend
+      infrastructure, CI/CDs + doing some mobile UI/UX development where
+      needed`,
     duration: {
-      from: new Date("Mar 2021"),
-      to: new Date("May 2021"),
+      from: new Date("Feb 2022"),
+      to: new Date("Sep 2022"),
     },
   },
 ];
