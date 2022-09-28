@@ -26,8 +26,8 @@ function ExperienceItem({ experience }: Props) {
         <div className="italic">{experience.position}</div>
         {experience.duration && (
           <div>
-            {moment(experience.duration.from, "MMM YYYY").format("MMM YYYY")} -{" "}
-            {moment(experience.duration?.to, "MMM YYYY").format("MMM YYYY")}
+            {moment(experience.duration.from).format("MMM YYYY")} -{" "}
+            {moment(experience.duration?.to).format("MMM YYYY")}
           </div>
         )}
         <hr />

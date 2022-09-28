@@ -8,16 +8,16 @@ function Experiences() {
         💻 Work
       </div>
       <div className="flex flex-col max-w-2xl">
-        {experiences.map((exp) => (
-          <ExperienceItem experience={exp} />
+        {experiences.map((exp, idx) => (
+          <ExperienceItem experience={exp} key={idx} />
         ))}
       </div>
       <div className="mt-20 text-4xl font-bold mb-4 text-center md:text-left">
         🏫 Involvement
       </div>
       <div className="flex flex-col max-w-xl">
-        {involvements.map((exp) => (
-          <ExperienceItem experience={exp} />
+        {involvements.map((exp, idx) => (
+          <ExperienceItem experience={exp} key={idx} />
         ))}
       </div>
     </div>
