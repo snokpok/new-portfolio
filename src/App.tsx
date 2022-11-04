@@ -10,8 +10,7 @@ import Navbar from "./components/Navbar/Navbar";
 import AboutMePage from "./pages/AboutMePage";
 import HomePage from "./pages/HomePage";
 
-const SCPGO_TOKEN =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlZpbmNlbnQgVnUiLCJlbWFpbCI6InZtdnVAdXNjLmVkdSIsImlzcyI6ImUyMDVmY2Q5MzJmZjRiYWRhYzI1MTc2MGY4ZDg1OWQ2In0.w_xHE2IoI9Bt0q5cOMxHfSDQnjzM7C8-WN3s4g6wDFI";
+const SCPGO_TOKEN = import.meta.env.VITE_SCPGO_TOKEN ?? "";
 
 function App(): ReactElement {
   const [theme, setTheme] = React.useState<ThemeState>({ darkMode: true });
@@ -23,9 +22,8 @@ function App(): ReactElement {
     <UserContext.Provider value={{ user, setUser }}>
       <ThemeStateContext.Provider value={{ theme, setTheme }}>
         <div
-          className={`min-w-screen min-h-screen ${
-            theme.darkMode && "bg-black text-white"
-          }`}
+          className={`min-w-screen min-h-screen ${theme.darkMode && "bg-black text-white"
+            }`}
         >
           <Switch>
             <Route exact path="/">

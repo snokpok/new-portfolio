@@ -1,4 +1,3 @@
-import React from "react";
 import { projectsList } from "../../common/data";
 import ProjectItem from "./ProjectItem";
 
@@ -10,7 +9,7 @@ function Projects() {
       </div>
       <div className="flex w-full flex-wrap justify-center">
         {Object.values(projectsList).map((project) => (
-          <ProjectItem project={project} />
+          <ProjectItem project={project} key={project.key} />
         ))}
       </div>
     </div>
