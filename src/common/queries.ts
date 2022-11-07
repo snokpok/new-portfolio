@@ -1,7 +1,5 @@
 import axios, { AxiosResponse } from "axios";
-
-// const LOCALHOST_SCPGO_SERVER = "http://localhost:4000";
-const SCPGO_SERVER_PROD = "https://serene-bastion-56610.herokuapp.com";
+import { SCP_SERVER_URL } from "./env";
 
 export async function getCurrentlyPlayingTrack(
   accessToken: string
@@ -11,7 +9,7 @@ export async function getCurrentlyPlayingTrack(
       Authorization: `Bearer ${accessToken}`,
       Accept: "application/json",
     },
-    url: `${SCPGO_SERVER_PROD}/scp`,
+    url: `${SCP_SERVER_URL}/scp`,
   });
   return res;
 }

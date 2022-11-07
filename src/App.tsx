@@ -2,6 +2,7 @@ import React, { ReactElement } from "react";
 import { Helmet } from "react-helmet";
 import { Route, Switch } from "react-router";
 import "./App.css";
+import { SCPGO_TOKEN } from "./common/env";
 import { ThemeStateContext, ThemeState } from "./common/theme.context";
 import { UserContext, UserState } from "./common/user.context";
 import Footer from "./components/Footer/Footer";
@@ -9,8 +10,6 @@ import SpotifyCPWidget from "./components/IntroductionHeader/SpotifyCPWidget";
 import Navbar from "./components/Navbar/Navbar";
 import AboutMePage from "./pages/AboutMePage";
 import HomePage from "./pages/HomePage";
-
-const SCPGO_TOKEN = import.meta.env.VITE_SCPGO_TOKEN ?? "";
 
 function App(): ReactElement {
   const [theme, setTheme] = React.useState<ThemeState>({ darkMode: true });
