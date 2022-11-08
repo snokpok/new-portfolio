@@ -1,17 +1,19 @@
+import { IProjectItem } from "../components/Projects/ProjectItem";
 import { IExperienceItem } from "./interfaces";
 
 export const RESUME_LINK =
   "https://docs.google.com/document/d/1IVcw8C8h8BjvmJzcXDvOO2mok98a2nvMmFQ-3nxgfzQ/edit?usp=sharing";
 export const BLOG_LINK = "https://blog.vuvincent.com";
 
-export const projectsList = {
+export const projectsList: Record<string, IProjectItem> = {
   scp: {
     name: "Spotify Currently Playing",
     description:
       "An API to easily get what you're currently playing on Spotify. Built with React.js and Golang on MongoDB. You should be looking at this app's demo right now whenever I jam :)",
-    link: "https://scp.vuvincent.com",
+    link: "https://github.com/snokpok/scp",
     key: "scp",
     imgFormat: "png",
+    technologies: ["golang", "vite", "react", "mongodb", "docker"]
   },
   listlive: {
     name: "Listlive: Making Productivity Social",
@@ -136,9 +138,6 @@ export const socialLinks = {
   instagram: "https://www.instagram.com/_vmvu/",
   email: "mailto:vinceny.fe@gmail.com",
 };
-
-export const ACCESS_TOKEN =
-  "BQAy2LY1dZW5SNCOxNwLjoCKAW-gUCfuuL356bRTF9zGvpaDzKoCIT8IBaJ92gIWkXYcd_inZjsjprODaxVfutNfPOwoiEh1GOAKFq6268ltZ6roqmHMkjG_l2Atro8PFUoiqcA7vmIgDo7CtisiRI1mEOfczySRNsHhoJemxMRy_4l7QwRqn3DRyL7RmRkc5coNdaH583xMrr73_rm50x0kkCjTkc7C0yDYuZUFFA";
 
 export const originalCallbackURL = `${window.location.protocol}//${window.location.host}/callback`;
 

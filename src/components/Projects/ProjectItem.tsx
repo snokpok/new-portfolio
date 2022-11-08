@@ -1,4 +1,5 @@
 import React from "react";
+import { technologiesIdAssetMap } from "../../common/technologies";
 
 export interface IProjectItem {
   name: string;
@@ -7,6 +8,7 @@ export interface IProjectItem {
   linkLabel?: string;
   key: string;
   imgFormat: string;
+  technologies?: (keyof (typeof technologiesIdAssetMap))[];
 }
 
 interface Props {
@@ -17,7 +19,7 @@ function ProjectItem({ project }: Props) {
   return (
     <div
       key={project.key}
-      className="flex flex-col max-w-xl border-2 m-6 w-96 rounded-lg xl:hover:rotate-3 xl:hover:scale-105 transform duration-150"
+      className="flex flex-col max-w-xl border-2 m-6 w-96 rounded-lg xl:hover:rotate-1 xl:hover:scale-105 transform duration-150"
     >
       <img
         src={`projects/${project.key}.${project.imgFormat}`}
@@ -30,6 +32,11 @@ function ProjectItem({ project }: Props) {
         </div>
         <div className="w-full h-4/5 p-2 text-xl xl:text-base md:text-2xl">
           {project.description}
+        </div>
+        <div className="w-full my-4 flex items-center justify-center flex-wrap">
+          {project.technologies?.map(tid => technologiesIdAssetMap[tid]).map((t, i) => (
+            <img src={t.assetLogoPathPublic} className="w-16" alt={t.displayName} id={i.toString()} />
+          ))}
         </div>
         <div className="flex justify-center">
           <a
