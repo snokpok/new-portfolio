@@ -35,7 +35,7 @@ function ProjectItem({ project }: Props) {
         </div>
         <div className="w-full my-4 flex items-center justify-center flex-wrap">
           {project.technologies?.map(tid => technologiesIdAssetMap[tid]).map((t, i) => (
-            <img src={t.assetLogoPathPublic} className="w-16" alt={t.displayName} id={i.toString()} />
+            <img src={t.assetLogoPathPublic} className="w-16 px-1" alt={t.displayName} id={i.toString()} />
           ))}
         </div>
         <div className="flex justify-center">

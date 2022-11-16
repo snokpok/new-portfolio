@@ -13,7 +13,7 @@ export const projectsList: Record<string, IProjectItem> = {
     link: "https://github.com/snokpok/scp",
     key: "scp",
     imgFormat: "png",
-    technologies: ["golang", "vite", "react", "mongodb", "docker"]
+    technologies: ["golang", "react", "vite", "mongodb", "docker", "tailwindcss"]
   },
   listlive: {
     name: "Listlive: Making Productivity Social",
@@ -23,6 +23,7 @@ export const projectsList: Record<string, IProjectItem> = {
     link: "https://github.com/snokpok/listlive",
     key: "listlive",
     imgFormat: "png",
+    technologies: ["python", "react", "tailwindcss", "mongodb"]
   },
   koseur: {
     name: "Koseur: Nightlife App",

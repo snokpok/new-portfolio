@@ -24,5 +24,9 @@ export const technologiesIdAssetMap: Record<string, Technology> = {
   "docker": {
     displayName: "Docker",
     assetLogoPathPublic: "/technologies/docker.png"
+  },
+  "python": {
+    displayName: "Python",
+    assetLogoPathPublic: "/technologies/python.png"
   }
 }
