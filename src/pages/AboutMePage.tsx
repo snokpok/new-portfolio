@@ -4,7 +4,7 @@ function AboutMePage() {
   return (
     <div className="flex flex-col px-0 items-center md:items-start">
       <div className="flex flex-col space-y-4 md:flex-row-reverse md:justify-center items-center mt-10 relative">
-        <div className="mx-4">
+        <div className="ml-24 mr-12">
           <img
             src="images/linkedin-headshot.jpeg"
             width={250}
@@ -13,7 +13,7 @@ function AboutMePage() {
             alt="My pic"
           />
         </div>
-        <div className="w-3/4 sm:w-2/3 lg:w-1/3">
+        <div className="w-3/4 sm:w-2/3 lg:w-1/3 ml-12">
           <div className="text-lg space-y-2">
             <div className="text-3xl font-extrabold">Hello!</div>
             <div>
@@ -30,7 +30,7 @@ function AboutMePage() {
           </div>
         </div>
       </div>
-      <div className="w-full flex flex-col space-y-4 md:flex-row-reverse md:justify-center items-center mt-10 relative">
+      <div className="w-full flex flex-col space-y-4 items-center mt-10">
         <div className="md:w-1/2">
           <Experiences />
         </div>

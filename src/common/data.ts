@@ -32,6 +32,7 @@ export const projectsList: Record<string, IProjectItem> = {
     link: "https://github.com/snokpok/koseur-frontend",
     key: "koseur",
     imgFormat: "png",
+    technologies: ["nextjs", "sass"],
   },
   tds: {
     name: "TDS Company Ltd. Landing Page",
@@ -40,14 +41,7 @@ export const projectsList: Record<string, IProjectItem> = {
     link: "http://tdsco-ceramic.com",
     key: "tds",
     imgFormat: "jpg",
-  },
-  "chat-app": {
-    name: "Simple chat app",
-    description:
-      "Chat app to experiment with Firebase's Firestore and OAuth services. Built with Next.js + ChakraUI",
-    link: "https://chat-app.vuvincent.com",
-    key: "chat-app",
-    imgFormat: "png",
+    technologies: ["html", "css", "javascript"],
   },
 };
 

@@ -28,5 +28,25 @@ export const technologiesIdAssetMap: Record<string, Technology> = {
   "python": {
     displayName: "Python",
     assetLogoPathPublic: "/technologies/python.png"
+  },
+  "nextjs": {
+    displayName: "Next.js",
+    assetLogoPathPublic: "/technologies/nextjs.png"
+  },
+  "sass": {
+    displayName: "Sass",
+    assetLogoPathPublic: "/technologies/sass.png"
+  },
+  "html": {
+    displayName: "HTML",
+    assetLogoPathPublic: "/technologies/html.png"
+  },
+  "css": {
+    displayName: "CSS",
+    assetLogoPathPublic: "/technologies/css.png"
+  },
+  "javascript": {
+    displayName: "JavaScript",
+    assetLogoPathPublic: "/technologies/javascript.png"
   }
 }
