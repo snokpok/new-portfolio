@@ -12,6 +12,9 @@ function BlogPostBox({date, title, assetUrl, idBlurb}: BlogPostBoxProps) {
             <div>
                 <h4>{date.toLocaleString()}</h4>
             </div>
+            <span className="mx-5">
+              {"|"}  
+            </span>
             <div>
                 <h4>{title}</h4>
             </div>

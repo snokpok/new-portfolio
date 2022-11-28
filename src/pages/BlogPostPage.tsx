@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import Markdown from 'react-markdown'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { allBlogPostsMetadata } from '../common/blog';
 import { BlogPost } from '../common/interfaces';
 import { InlineLink } from '../components/Miscs/InlineLink';
+import remarkGfm from 'remark-gfm';
+import remarkToc from 'remark-toc';
+import rehypeHighlight from 'rehype-highlight';
+import rehypeRaw from 'rehype-raw';
+import { isPropertySignature } from 'typescript';
 
 function BlogPostPage() {
     
@@ -21,15 +26,23 @@ function BlogPostPage() {
 
   return (
     <div className="flex flex-col items-center">
+        <Link to="/blog" className="hover:underline">
+                <h2 className="text-xl">←</h2>
+        </Link>
         <div className="my-5">
             <h1 className="text-2xl">{metaBlog?.title}</h1>
         </div>
         <hr className="w-1/6 mb-4" />
-        <div className="flex flex-col items-center px-16 leading-10 font-mono">
+        <div className="flex flex-col items-center px-16 leading-10">
         <Markdown
             components={{
-                a: ({node, ...props}) => <InlineLink {...props}/>
+                h1: ({node, className, children, ...props}) => (<h1 {...props} className="text-xl py-4 font-extrabold">{children}</h1>),
+                h2: ({node, className, children, ...props}) => (<h2 {...props} className="text-xl py-4 font-extrabold">{children}</h2>),
+                a: ({node, className, children, ...props}) => <InlineLink {...props} />,
+                code: ({node,className, inline, children, ...props}) => <code {...props}>{children}</code>
             }}
+            remarkPlugins={[remarkGfm, remarkToc]}
+            rehypePlugins={[rehypeHighlight, rehypeRaw]}
         >
             {content}
         </Markdown>

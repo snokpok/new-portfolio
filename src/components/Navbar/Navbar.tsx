@@ -40,11 +40,11 @@ function Navbar({ extraElems }: Props) {
         <Link to="/about">
           <NavbarLink>About me 🧑🏻‍💻</NavbarLink>
         </Link>
+        <Link to="/blog">
+          <NavbarLink>Blog 📖</NavbarLink>
+        </Link>
         <a href={RESUME_LINK} target="_blank" rel="noreferrer">
           <ExternalLink>Resume 👈</ExternalLink>
-        </a>
-        <a href={BLOG_LINK} target="_blank" rel="noreferrer">
-          <ExternalLink>Blog 📖</ExternalLink>
         </a>
       </div>
       <div className="flex items-center">
