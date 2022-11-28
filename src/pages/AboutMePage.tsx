@@ -19,7 +19,7 @@ function AboutMePage() {
             <div>
               I'm Vincent Vu, currently studying Computer Science at the
               University of Southern California. My interest lies in building
-              new products and watching them to fruition.
+              great products and watching them to fruition.
             </div>
             <div>
               I'm also passionate about helping others build out their ideas. I

@@ -9,6 +9,8 @@ import Footer from "./components/Footer/Footer";
 import SpotifyCPWidget from "./components/IntroductionHeader/SpotifyCPWidget";
 import Navbar from "./components/Navbar/Navbar";
 import AboutMePage from "./pages/AboutMePage";
+import BlogPage from "./pages/BlogPage";
+import BlogPostPage from "./pages/BlogPostPage";
 import HomePage from "./pages/HomePage";
 
 function App(): ReactElement {
@@ -41,6 +43,26 @@ function App(): ReactElement {
               <Navbar extraElems={<SpotifyCPWidget size="small" />} />
               <div className="py-16">
                 <AboutMePage />
+              </div>
+              <Footer />
+            </Route>
+            <Route exact path="/blog">
+              <Helmet>
+                <title>Blog | Vincent Vu</title>
+              </Helmet>
+              <Navbar extraElems={<SpotifyCPWidget size="small" />} />
+              <div className="py-16">
+                <BlogPage />
+              </div>
+              <Footer />
+            </Route>
+            <Route exact path="/blog/:id">
+              <Helmet>
+                <title>Blog | Vincent Vu</title>
+              </Helmet>
+              <Navbar extraElems={<SpotifyCPWidget size="small" />} />
+              <div className="py-16">
+                <BlogPostPage />
               </div>
               <Footer />
             </Route>

@@ -14,3 +14,10 @@ export interface IExperienceItem {
   description?: string;
   link?: string;
 }
+
+export interface BlogPost {
+  title: string,
+  date: Date,
+  idBlurb: string, // what to show on URL suffix
+  assetUrl: string // abs from folder /public
+}
