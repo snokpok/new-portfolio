@@ -20,4 +20,5 @@ export interface BlogPost {
   date: Date,
   idBlurb: string, // what to show on URL suffix
   assetUrl: string // abs from folder /public
+  draft?: boolean,
 }
