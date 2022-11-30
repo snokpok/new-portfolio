@@ -9,10 +9,10 @@ interface Props {
 function BlogPostsList({data}: Props) {
   return (
     <div className="flex flex-col items-center py-10">
-        {data.map(({title, date, assetUrl, idBlurb, draft}) => {
+        {data.map(({title, date, assetUrl, idBlurb, draft}, index) => {
             if(draft) return null;
             return (
-                <div className="py-2 hover:underline">
+                <div className="py-2 hover:underline" key={index}>
                     <BlogPostBox title={title} date={date} assetUrl={assetUrl} idBlurb={idBlurb}/>
                 </div>
             )
