@@ -5,7 +5,7 @@ draft: false
 author: "Vincent Vu"
 --- -->
 
-```cpp
+```
 void learnCoding(bool motivation) {
     if (motivation) learnCoding(false);
 }
