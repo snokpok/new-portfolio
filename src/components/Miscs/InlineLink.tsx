@@ -2,7 +2,7 @@ import React from "react";
 import { ThemeStateContext } from "../../common/theme.context";
 
 type InlineLinkProps = React.AnchorHTMLAttributes<any> & {
-  showArrowOnHover?: boolean
+  showArrowOnHover?: boolean;
 };
 
 export const InlineLink: React.FC<InlineLinkProps> = (
@@ -25,7 +25,8 @@ export const InlineLink: React.FC<InlineLinkProps> = (
       onMouseEnter={handleMouseIn}
       onMouseLeave={handleMouseOut}
     >
-      {props.children}{props.showArrowOnHover && hovered && <span>{"↑"}</span>}
+      {props.children}
+      {props.showArrowOnHover && hovered && <span>{"↑"}</span>}
     </a>
   );
 };

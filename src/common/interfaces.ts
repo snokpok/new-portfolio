@@ -1,6 +1,6 @@
 export interface Technology {
-  displayName: string,
-  assetLogoPathPublic: string,
+  displayName: string;
+  assetLogoPathPublic: string;
 }
 
 export interface IExperienceItem {
@@ -16,9 +16,9 @@ export interface IExperienceItem {
 }
 
 export interface BlogPost {
-  title: string,
-  date: Date,
-  idBlurb: string, // what to show on URL suffix
-  assetUrl: string // abs from folder /public
-  draft?: boolean,
+  title: string;
+  date: Date;
+  idBlurb: string; // what to show on URL suffix
+  assetUrl: string; // abs from folder /public
+  draft?: boolean;
 }

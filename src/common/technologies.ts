@@ -1,52 +1,52 @@
 import { Technology } from "./interfaces";
 
 export const technologiesIdAssetMap: Record<string, Technology> = {
-  "golang": {
+  golang: {
     displayName: "Golang",
-    assetLogoPathPublic: "/technologies/golang.png"
+    assetLogoPathPublic: "/technologies/golang.png",
   },
-  "mongodb": {
+  mongodb: {
     displayName: "MongoDB",
-    assetLogoPathPublic: "/technologies/mongodb.png"
+    assetLogoPathPublic: "/technologies/mongodb.png",
   },
-  "vite": {
+  vite: {
     displayName: "Vite.js",
-    assetLogoPathPublic: "/technologies/vite.png"
+    assetLogoPathPublic: "/technologies/vite.png",
   },
-  "react": {
+  react: {
     displayName: "React.js",
-    assetLogoPathPublic: "/technologies/react.png"
+    assetLogoPathPublic: "/technologies/react.png",
   },
-  "tailwindcss": {
+  tailwindcss: {
     displayName: "TailwindCSS",
-    assetLogoPathPublic: "/technologies/tailwindcss.png"
+    assetLogoPathPublic: "/technologies/tailwindcss.png",
   },
-  "docker": {
+  docker: {
     displayName: "Docker",
-    assetLogoPathPublic: "/technologies/docker.png"
+    assetLogoPathPublic: "/technologies/docker.png",
   },
-  "python": {
+  python: {
     displayName: "Python",
-    assetLogoPathPublic: "/technologies/python.png"
+    assetLogoPathPublic: "/technologies/python.png",
   },
-  "nextjs": {
+  nextjs: {
     displayName: "Next.js",
-    assetLogoPathPublic: "/technologies/nextjs.png"
+    assetLogoPathPublic: "/technologies/nextjs.png",
   },
-  "sass": {
+  sass: {
     displayName: "Sass",
-    assetLogoPathPublic: "/technologies/sass.png"
+    assetLogoPathPublic: "/technologies/sass.png",
   },
-  "html": {
+  html: {
     displayName: "HTML",
-    assetLogoPathPublic: "/technologies/html.png"
+    assetLogoPathPublic: "/technologies/html.png",
   },
-  "css": {
+  css: {
     displayName: "CSS",
-    assetLogoPathPublic: "/technologies/css.png"
+    assetLogoPathPublic: "/technologies/css.png",
   },
-  "javascript": {
+  javascript: {
     displayName: "JavaScript",
-    assetLogoPathPublic: "/technologies/javascript.png"
-  }
-}
+    assetLogoPathPublic: "/technologies/javascript.png",
+  },
+};

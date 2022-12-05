@@ -1,24 +1,29 @@
-import React from 'react'
-import { BlogPost } from '../../common/interfaces'
-import BlogPostBox from '../BlogPostBox/BlogPostBox'
+import React from "react";
+import { BlogPost } from "../../common/interfaces";
+import BlogPostBox from "../BlogPostBox/BlogPostBox";
 
 interface Props {
-    data: BlogPost[]
+  data: BlogPost[];
 }
 
-function BlogPostsList({data}: Props) {
+function BlogPostsList({ data }: Props) {
   return (
     <div className="flex flex-col items-center py-10">
-        {data.map(({title, date, assetUrl, idBlurb, draft}, index) => {
-            if(draft) return null;
-            return (
-                <div className="py-2 hover:underline" key={index}>
-                    <BlogPostBox title={title} date={date} assetUrl={assetUrl} idBlurb={idBlurb}/>
-                </div>
-            )
-        })}
+      {data.map(({ title, date, assetUrl, idBlurb, draft }, index) => {
+        if (draft) return null;
+        return (
+          <div className="py-2 hover:underline" key={index}>
+            <BlogPostBox
+              title={title}
+              date={date}
+              assetUrl={assetUrl}
+              idBlurb={idBlurb}
+            />
+          </div>
+        );
+      })}
     </div>
-  )
+  );
 }
 
-export default BlogPostsList
+export default BlogPostsList;

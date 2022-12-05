@@ -23,8 +23,9 @@ function App(): ReactElement {
     <UserContext.Provider value={{ user, setUser }}>
       <ThemeStateContext.Provider value={{ theme, setTheme }}>
         <div
-          className={`min-w-screen min-h-screen ${theme.darkMode && "bg-black text-white"
-            }`}
+          className={`min-w-screen min-h-screen ${
+            theme.darkMode && "bg-black text-white"
+          }`}
         >
           <Switch>
             <Route exact path="/">

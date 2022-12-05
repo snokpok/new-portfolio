@@ -8,7 +8,7 @@ export interface IProjectItem {
   linkLabel?: string;
   key: string;
   imgFormat: string;
-  technologies?: (keyof (typeof technologiesIdAssetMap))[];
+  technologies?: (keyof typeof technologiesIdAssetMap)[];
 }
 
 interface Props {
@@ -34,9 +34,16 @@ function ProjectItem({ project }: Props) {
           {project.description}
         </div>
         <div className="w-full my-4 flex items-center justify-center flex-wrap">
-          {project.technologies?.map(tid => technologiesIdAssetMap[tid]).map((t, i) => (
-            <img src={t.assetLogoPathPublic} className="w-16 px-1" alt={t.displayName} id={i.toString()} />
-          ))}
+          {project.technologies
+            ?.map((tid) => technologiesIdAssetMap[tid])
+            .map((t, i) => (
+              <img
+                src={t.assetLogoPathPublic}
+                className="w-16 px-1"
+                alt={t.displayName}
+                id={i.toString()}
+              />
+            ))}
         </div>
         <div className="flex justify-center">
           <a
