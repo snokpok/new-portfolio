@@ -15,18 +15,18 @@ function AboutMePage() {
         </div>
         <div className="w-3/4 sm:w-2/3 lg:w-1/3 ml-12">
           <div className="text-lg space-y-2">
-            <div className="text-3xl font-extrabold">Hello!</div>
-            <div>
+            <h1 className="text-3xl font-extrabold">Hello!</h1>
+            <p>
               I'm Vincent Vu, currently studying Computer Science at the
               University of Southern California. My interest lies in building
               great products and watching them to fruition.
-            </div>
-            <div>
+            </p>
+            <p>
               I'm also passionate about helping others build out their ideas. I
               currently serve as the lead of engineering at HackSC. My focus is
               on building and maintaining the innovative services, dashboards
               and devtools that revolutionizes the hackathon experience.
-            </div>
+            </p>
           </div>
         </div>
       </div>

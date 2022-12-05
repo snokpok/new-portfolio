@@ -13,15 +13,11 @@ void learnCoding(bool motivation) {
 
 With the forever increasing popularity regarding becoming a software engineer/developer, getting $100k a year and living the good life, people have been searching for ways to break into the tech industry. As consumers of the 21st century we love products that are both cheap (dirtcheap if possible) and of great quality (Louis Vuitton and Gucci-like). We thus try to solve this optimization problem: given resources e.g money/assets as an input of amount `x`, we need to maximize the value we extract from it per dollar `y`. Everyone knows the traditional way to get into software engineering or related technical roles: get a CS degree + some technical experience through internships or personal projects, and then apply to these great tech companies. But the value of the CS degree is said to be limited and that the CS degree also consumes too much time for the limited value it provides. In particular, people often bring up how most of the things we CS students learn will never really apply to our daily job or that very little of what we learned would be applicable.
 
-<br/>
-
 As a computer science major at a great university, I could partly agree to this. Generally, you have to take a certain amount of general education courses, and often it's something you aren't interested about. Courses that satisfy your major requirements are not exempt from this fact either--I have to take an electrical engineering class but I'm not an EE/CECS major, and I'm not necessarily going into embedded systems in my job either. For the courses that are just pure computer science, some of them cover things like proofs and algorithms that I probably will never use in my job. Why then am I learning how to be a purist **computer scientist instead of a software engineer?** ... Oh wait.
 
 ## What is computer science?
 
 At this point of our rant, we realize that the _computer science major_ is **not explicitly** about creating softwares or being a software developer/engineer. Computer science is a broad field with the goal of understanding computation, automation, and information (ripped this from the first line of the Wikipedia). Learning computer science is not just about learning how to build softwares, but rather it's about learning these things that constitutes computers. By having a technical and detailed knowledge of the concepts of computer science, a CS student is equipped with not only skills to understand computers but also various hard skills e.g problem-solving and creative thinking skills that is necessary to solve problems related to computers and various other problems in computer science. The CS degree thus provides you the **skills, frameworks and knowledge** regarding computer science, which is important if you want to pursue a career in software engineering/development.
-
-<br/>
 
 This is why the majority of SWEs in this world has a CS degree, because it provides the set of knowledge and skills that allows us to not only build softwares in scalable and efficient ways but also to understand problems when we need to debug production errors.
 
@@ -40,7 +36,6 @@ When you go to college, you shouldn't be paying only for that degree that you co
 ## The bottom line
 
 I may miss a couple of points because after all I only know up to what I have researched about coding bootcamps. Nonetheless, even if there's a coding bootcamp experience that is better than that of a 4-years college, I still believe that being in college pursuing a computer science degree provides much more value to me as a prospective software engineer than if I have pursued alternative options.
-<br/>
 
 That's it for this post! I hope you enjoyed the read. Any comments or ideas please drop them below, and stay tuned for my next entry. Chao!
 

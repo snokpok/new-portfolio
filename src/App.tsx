@@ -9,7 +9,7 @@ import Footer from "./components/Footer/Footer";
 import SpotifyCPWidget from "./components/IntroductionHeader/SpotifyCPWidget";
 import Navbar from "./components/Navbar/Navbar";
 import AboutMePage from "./pages/AboutMePage";
-import BlogPage from "./pages/BlogPage";
+import BlogPostListPage from "./pages/BlogPostListPage";
 import BlogPostPage from "./pages/BlogPostPage";
 import HomePage from "./pages/HomePage";
 
@@ -53,7 +53,7 @@ function App(): ReactElement {
               </Helmet>
               <Navbar extraElems={<SpotifyCPWidget size="small" />} />
               <div className="py-16">
-                <BlogPage />
+                <BlogPostListPage />
               </div>
               <Footer />
             </Route>
