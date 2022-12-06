@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeStateContext } from "../common/theme.context";
 
 const LeftArrowButton = () => {
+  const { theme } = useContext(ThemeStateContext);
   return (
-    <div className="px-2 border-white border-2 rounded-full group hover:bg-white transition-colors bg-black">
-      <h2 className="text-xl group-hover:text-black">←</h2>
-    </div>
+    <button
+      className={`px-2 ${theme.darkMode ? "text-white" : "text-black"} ${
+        theme.darkMode ? "border-white" : "border-black"
+      } border-2 rounded-full group hover:${
+        theme.darkMode ? "bg-white" : "bg-black"
+      } transition-colors ${theme.darkMode ? "bg-black" : "bg-white"}`}
+    >
+      <h2
+        className={`text-xl group-hover:${
+          theme.darkMode ? "text-black" : "text-white"
+        }`}
+      >
+        ←
+      </h2>
+    </button>
   );
 };
 

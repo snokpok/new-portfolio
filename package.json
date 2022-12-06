@@ -12,6 +12,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "axios": "^0.23.0",
+    "commonmark": "^0.30.0",
     "moment": "^2.29.3",
     "postcss-import": "^14.0.2",
     "react": "^17.0.2",
@@ -26,7 +27,6 @@
     "rehype-raw": "^6.1.1",
     "remark": "^14.0.2",
     "remark-gfm": "^3.0.1",
-    "remark-toc": "^8.0.1",
     "styled-components": "^5.3.1",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
@@ -58,6 +58,7 @@
     ]
   },
   "devDependencies": {
+    "@types/commonmark": "^0.27.5",
     "@types/react-helmet": "^6.1.2",
     "@types/react-router-dom": "^5.3.1",
     "@types/styled-components": "^5.1.15",

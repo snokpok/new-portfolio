@@ -12,7 +12,7 @@ function BlogPostsList({ data }: Props) {
       {data.map(({ title, date, assetUrl, idBlurb, draft }, index) => {
         if (draft) return null;
         return (
-          <div className="py-2 hover:underline" key={index}>
+          <div className="py-2" key={index}>
             <BlogPostBox
               title={title}
               date={date}
