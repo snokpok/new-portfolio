@@ -16,6 +16,7 @@ import {
   TOC,
 } from "../common/markdown.util";
 import { ThemeStateContext } from "../common/theme.context";
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 
 interface TOCProps {
   data: TOC;
@@ -67,9 +68,8 @@ function BlogPostPage() {
           <div className="flex flex-col items-center pb-8 space-y-5">
             <h1 className="text-3xl font-semibold">{metaBlog?.title}</h1>
             <h2
-              className={`text-lg font-light ${
-                darkMode ? "text-gray-300" : "text-gray-800"
-              } italic`}
+              className={`text-lg font-light ${darkMode ? "text-gray-300" : "text-gray-800"
+                } italic`}
             >
               {metaBlog?.date ? dateToText(metaBlog.date) : null}
             </h2>
@@ -109,9 +109,9 @@ function BlogPostPage() {
                     {children}
                   </InlineLink>
                 ),
-                code: ({ node, className, inline, children, ...props }) => (
-                  <code {...props}>{children}</code>
-                ),
+                code: ({ node, className, inline, children, ...props }) => {
+                  return <code {...props}>{children}</code>;
+                },
                 p: ({ node, className, children, ...props }) => (
                   <p {...props} className="py-2 leading-8 font-mono">
                     {children}
