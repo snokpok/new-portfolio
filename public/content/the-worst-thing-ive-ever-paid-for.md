@@ -1,9 +1,8 @@
-~~~cpp
+```cpp
 void learnCoding(bool motivation) {
     if (motivation) learnCoding(false);
 }
-~~~
-
+```
 
 With the forever increasing popularity regarding becoming a software engineer/developer, getting $100k a year and living the good life, people have been searching for ways to break into the tech industry. As consumers of the 21st century we love products that are both cheap (dirtcheap if possible) and of great quality (Louis Vuitton and Gucci-like). We thus try to solve this optimization problem:
 

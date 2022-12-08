@@ -5,7 +5,6 @@ import { allBlogPostsMetadata } from "../common/blog";
 import { BlogPost } from "../common/interfaces";
 import { InlineLink } from "../components/Miscs/InlineLink";
 import remarkGfm from "remark-gfm";
-import rehypeHighlight from "rehype-highlight";
 import rehypeRaw from "rehype-raw";
 import { Helmet } from "react-helmet";
 import LeftArrowButton from "../components/LeftArrowButton";
@@ -16,7 +15,6 @@ import {
   TOC,
 } from "../common/markdown.util";
 import { ThemeStateContext } from "../common/theme.context";
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 
 interface TOCProps {
   data: TOC;
@@ -68,8 +66,9 @@ function BlogPostPage() {
           <div className="flex flex-col items-center pb-8 space-y-5">
             <h1 className="text-3xl font-semibold">{metaBlog?.title}</h1>
             <h2
-              className={`text-lg font-light ${darkMode ? "text-gray-300" : "text-gray-800"
-                } italic`}
+              className={`text-lg font-light ${
+                darkMode ? "text-gray-300" : "text-gray-800"
+              } italic`}
             >
               {metaBlog?.date ? dateToText(metaBlog.date) : null}
             </h2>
@@ -119,7 +118,7 @@ function BlogPostPage() {
                 ),
               }}
               remarkPlugins={[remarkGfm]}
-              rehypePlugins={[rehypeHighlight, rehypeRaw]}
+              rehypePlugins={[rehypeRaw]}
             >
               {content}
             </Markdown>
