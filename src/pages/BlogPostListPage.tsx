@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { allBlogPostsMetadata } from "../common/blog";
 import { ThemeStateContext } from "../common/theme.context";
 import BlogPostsList from "../components/BlogPostsList/BlogPostsList";
+import styles from "./BlogPostListPage.module.css";
 
 export default function BlogPostListPage() {
   const {
@@ -19,7 +20,9 @@ export default function BlogPostListPage() {
       >
         My various thoughts, devlogs, etc...
       </h2>
-      <BlogPostsList data={allBlogPostsMetadata} />
+      <div className={styles.blogPostList}>
+        <BlogPostsList data={allBlogPostsMetadata} />
+      </div>
     </div>
   );
 }
