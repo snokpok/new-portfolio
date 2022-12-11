@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { allBlogPostsMetadata } from "../common/blog";
 import { ThemeStateContext } from "../common/theme.context";
 import BlogPostsList from "../components/BlogPostsList/BlogPostsList";
+import "../animations.module.css";
 import styles from "./BlogPostListPage.module.css";
 
 export default function BlogPostListPage() {

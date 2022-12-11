@@ -1,0 +1,11 @@
+@import url("../animations.module.css");
+
+.aboutMeDiv {
+  animation: fade-in 1s;
+  @apply flex flex-col space-y-4 md:flex-row-reverse md:justify-center items-center mt-10 relative;
+}
+
+.expDiv {
+  animation: fade-in 1s 1s forwards;
+  @apply opacity-0 w-2/3 flex flex-col items-center;
+}

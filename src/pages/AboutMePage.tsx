@@ -1,9 +1,10 @@
 import Experiences from "../components/Experiences/Experiences";
+import styles from "./AboutMePage.module.css";
 
 function AboutMePage() {
   return (
-    <div className="flex flex-col px-0 items-center md:items-start">
-      <div className="flex flex-col space-y-4 md:flex-row-reverse md:justify-center items-center mt-10 relative">
+    <div className="flex flex-col items-center space-y-4">
+      <div className={styles.aboutMeDiv}>
         <div className="ml-24 mr-12">
           <img
             src="images/linkedin-headshot.jpeg"
@@ -30,10 +31,8 @@ function AboutMePage() {
           </div>
         </div>
       </div>
-      <div className="w-full flex flex-col space-y-4 items-center mt-10">
-        <div className="md:w-1/2">
-          <Experiences />
-        </div>
+      <div className={styles.expDiv}>
+        <Experiences />
       </div>
     </div>
   );

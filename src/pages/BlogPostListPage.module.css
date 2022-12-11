@@ -1,14 +1,5 @@
+@import "../animations.module.css";
+
 .blogPostList {
   animation: fade-in 1s;
-}
-
-@keyframes fade-in {
-  0% {
-    transform: translateY(100px);
-    opacity: 0%;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 100%;
-  }
 }

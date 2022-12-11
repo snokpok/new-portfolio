@@ -3,7 +3,7 @@ import ExperienceItem from "./ExperienceItem";
 
 function Experiences() {
   return (
-    <div className="flex 2xl:flex-row flex-col my-8 2xl:space-x-24">
+    <div className="flex xl:flex-row flex-col my-8 xl:space-x-24">
       <div>
         <div className="text-4xl font-bold mb-4 text-center md:text-left">
           💻 Work
@@ -15,7 +15,7 @@ function Experiences() {
         </div>
       </div>
       <div>
-        <div className="2xl:mt-0 mt-20 text-4xl font-bold mb-4 text-center md:text-left">
+        <div className="text-4xl font-bold mb-4 text-center md:text-left">
           🏫 Involvement
         </div>
         <div className="flex flex-col max-w-3xl">

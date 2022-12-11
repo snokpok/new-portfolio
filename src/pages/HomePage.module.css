@@ -1,0 +1,6 @@
+@import url("../animations.module.css");
+
+.projects {
+  animation: fade-in 1s forwards;
+  @apply opacity-0;
+}

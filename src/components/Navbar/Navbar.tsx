@@ -44,7 +44,7 @@ function Navbar({ extraElems }: Props) {
           <NavbarLink>Blog 📖</NavbarLink>
         </Link>
         <a href={RESUME_LINK} target="_blank" rel="noreferrer">
-          <ExternalLink>Resume 👈</ExternalLink>
+          <ExternalLink>Resume</ExternalLink>
         </a>
       </div>
       <div className="flex items-center">
