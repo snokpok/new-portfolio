@@ -15,6 +15,7 @@ import {
   TOC,
 } from "../common/markdown.util";
 import { ThemeStateContext } from "../common/theme.context";
+import SyntaxHighlighter from "react-syntax-highlighter";
 
 interface TOCProps {
   data: TOC;
@@ -62,7 +63,7 @@ function BlogPostPage() {
         <Link to="/blog" className="fixed self-start ml-4 mt-4">
           <LeftArrowButton />
         </Link>
-        <div className="mt-20 sm:w-4/5 lg:w-2/3 xl:w-3/4 2xl:w-2/5 flex flex-col items-center">
+        <div className="mt-20 sm:w-4/5 lg:w-2/3 xl:w-3/4 2xl:w-1/2 flex flex-col items-center">
           <div className="flex flex-col items-center pb-8 space-y-5">
             <h1 className="text-3xl font-semibold">{metaBlog?.title}</h1>
             <h2
@@ -78,7 +79,7 @@ function BlogPostPage() {
             <TableOfContentBlog data={getTocFromMDText(content)} />
           </div>
           <hr className="w-1/6 mb-8" />
-          <div className="flex flex-col items-center px-16 leading-10">
+          <div className="flex flex-col items-center px-16 leading-10 text-justify">
             <Markdown
               components={{
                 h1: ({ node, className, children, ...props }) => (
@@ -109,12 +110,38 @@ function BlogPostPage() {
                   </InlineLink>
                 ),
                 code: ({ node, className, inline, children, ...props }) => {
-                  return <code {...props}>{children}</code>;
+                  if (inline) {
+                    return (
+                      <code
+                        {...props}
+                        className="text-red-600 bg-gray-800 px-1"
+                      >
+                        {children}
+                      </code>
+                    );
+                  }
+                  return (
+                    <div className="my-8">
+                      <SyntaxHighlighter language="cpp">
+                        {children.toString()}
+                      </SyntaxHighlighter>
+                    </div>
+                  );
                 },
                 p: ({ node, className, children, ...props }) => (
                   <p {...props} className="py-2 leading-8 font-mono">
                     {children}
                   </p>
+                ),
+                blockquote: ({ node, className, children, ...props }) => (
+                  <div className="border-l-2 border-gray-400 my-3 ml-4">
+                    <p
+                      {...props}
+                      className="pl-5 leading-8 font-mono italic font-bold text-gray-300"
+                    >
+                      {children}
+                    </p>
+                  </div>
                 ),
               }}
               remarkPlugins={[remarkGfm]}
