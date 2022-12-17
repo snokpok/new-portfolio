@@ -63,7 +63,7 @@ function BlogPostPage() {
         <Link to="/blog" className="fixed self-start ml-4 mt-4">
           <LeftArrowButton />
         </Link>
-        <div className="mt-20 sm:w-4/5 lg:w-2/3 xl:w-3/4 2xl:w-1/2 flex flex-col items-center">
+        <div className="mt-20 sm:w-4/5 lg:w-3/5 2xl:w-1/2 flex flex-col items-center">
           <div className="flex flex-col items-center pb-8 space-y-5">
             <h1 className="text-3xl font-semibold">{metaBlog?.title}</h1>
             <h2
@@ -79,7 +79,7 @@ function BlogPostPage() {
             <TableOfContentBlog data={getTocFromMDText(content)} />
           </div>
           <hr className="w-1/6 mb-8" />
-          <div className="flex flex-col items-center px-16 leading-10 text-justify">
+          <div className="flex flex-col px-16 leading-10 text-justify">
             <Markdown
               components={{
                 h1: ({ node, className, children, ...props }) => (
@@ -87,7 +87,7 @@ function BlogPostPage() {
                     {...props}
                     className="text-2xl py-4 font-extrabold font-mono"
                   >
-                    {children}
+                    <span className="text-green-500">#</span> {children}
                   </h1>
                 ),
                 h2: ({ node, className, children, ...props }) => (
@@ -100,7 +100,7 @@ function BlogPostPage() {
                       className="text-xl py-4 font-extrabold font-mono"
                       id={snakeCase(children.toString())}
                     >
-                      {children}
+                      <span className="text-green-500">##</span> {children}
                     </h2>
                   </Link>
                 ),
@@ -114,7 +114,7 @@ function BlogPostPage() {
                     return (
                       <code
                         {...props}
-                        className="text-red-600 bg-gray-800 px-1"
+                        className="text-red-600 bg-gray-800 px-1 ml-1"
                       >
                         {children}
                       </code>
@@ -129,16 +129,13 @@ function BlogPostPage() {
                   );
                 },
                 p: ({ node, className, children, ...props }) => (
-                  <p {...props} className="py-2 leading-8 font-mono">
+                  <p {...props} className="py-2 leading-8 text-lg">
                     {children}
                   </p>
                 ),
                 blockquote: ({ node, className, children, ...props }) => (
                   <div className="border-l-2 border-gray-400 my-3 ml-4">
-                    <p
-                      {...props}
-                      className="pl-5 leading-8 font-mono italic font-bold text-gray-300"
-                    >
+                    <p className="pl-5 leading-8 font-mono italic font-bold text-gray-300">
                       {children}
                     </p>
                   </div>

@@ -5,7 +5,7 @@ import styles from "./HomePage.module.css";
 function HomePage() {
   return (
     <div>
-      <div>
+      <div className={styles.about}>
         <IntroductionHeader />
       </div>
       <div className={styles.projects}>

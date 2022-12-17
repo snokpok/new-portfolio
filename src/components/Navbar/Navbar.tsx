@@ -29,7 +29,7 @@ function Navbar({ extraElems }: Props) {
   const { theme } = React.useContext(ThemeStateContext);
   return (
     <div
-      className={`flex h-16 max-w-screen border-b-2 justify-between items-center px-2 fixed w-screen ${
+      className={`flex h-16 max-w-screen border-b-2 border-gray-700 justify-between items-center px-2 fixed w-screen ${
         theme.darkMode ? "bg-black" : "bg-white"
       } z-50`}
     >
