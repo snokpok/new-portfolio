@@ -23,7 +23,7 @@ function App(): ReactElement {
     <UserContext.Provider value={{ user, setUser }}>
       <ThemeStateContext.Provider value={{ theme, setTheme }}>
         <div
-          className={`min-w-screen min-h-screen ${
+          className={`min-w-screen min-h-screen font-rubik ${
             theme.darkMode && "bg-black text-white"
           }`}
         >
