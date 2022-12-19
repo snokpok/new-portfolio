@@ -21,17 +21,19 @@ function ExperienceItem({ experience }: Props) {
           </a>
         )}
       </div>
-      <div className="flex flex-col justify-center w-full text-center sm:text-left">
-        <div className="font-extrabold text-3xl">{experience.corp}</div>
-        <div className="italic">{experience.position}</div>
+      <div className="flex flex-col justify-center w-full text-center sm:text-left gap-1">
+        <h1 className="font-extrabold text-3xl">{experience.corp}</h1>
+        <h2 className="italic">{experience.position}</h2>
         {experience.duration && (
-          <div>
+          <p>
             {moment(experience.duration.from).format("MMM YYYY")} -{" "}
-            {moment(experience.duration?.to).format("MMM YYYY")}
-          </div>
+            {experience.duration?.to
+              ? moment(experience.duration.to).format("MMM YYYY")
+              : "Present"}
+          </p>
         )}
         <hr />
-        <div>{experience.description}</div>
+        <p>{experience.description}</p>
       </div>
     </div>
   );

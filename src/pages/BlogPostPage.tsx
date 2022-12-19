@@ -79,7 +79,7 @@ function BlogPostPage() {
             <TableOfContentBlog data={getTocFromMDText(content)} />
           </div>
           <hr className="w-1/6 mb-8" />
-          <div className="flex flex-col px-16 leading-10 text-justify">
+          <div className="flex flex-col px-16 leading-10">
             <Markdown
               components={{
                 h1: ({ node, className, children, ...props }) => (
@@ -100,7 +100,7 @@ function BlogPostPage() {
                       className="text-xl py-4 font-extrabold font-mono"
                       id={snakeCase(children.toString())}
                     >
-                      <span className="text-green-500">##</span> {children}
+                      <span className="text-blue-500">##</span> {children}
                     </h2>
                   </Link>
                 ),
@@ -129,7 +129,7 @@ function BlogPostPage() {
                   );
                 },
                 p: ({ node, className, children, ...props }) => (
-                  <p {...props} className="py-2 leading-8 text-lg">
+                  <p {...props} className="py-2 leading-8 text-lg indent-1">
                     {children}
                   </p>
                 ),

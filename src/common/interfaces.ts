@@ -8,7 +8,7 @@ export interface IExperienceItem {
   logo?: string;
   duration?: {
     from: Date;
-    to: Date;
+    to?: Date;
   };
   position: string;
   description?: string;

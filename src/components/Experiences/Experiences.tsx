@@ -3,22 +3,22 @@ import ExperienceItem from "./ExperienceItem";
 
 function Experiences() {
   return (
-    <div className="flex xl:flex-row flex-col my-8 xl:space-x-24">
+    <div className="flex xl:flex-row flex-col my-8 xl:space-x-24 gap-10">
       <div>
-        <div className="text-4xl font-bold mb-4 text-center md:text-left">
+        <h1 className="text-4xl font-bold mb-4 text-center md:text-left">
           💻 Work
-        </div>
-        <div className="flex flex-col max-w-3xl">
+        </h1>
+        <div className="flex flex-col max-w-xl">
           {experiences.map((exp, idx) => (
             <ExperienceItem experience={exp} key={idx} />
           ))}
         </div>
       </div>
       <div>
-        <div className="text-4xl font-bold mb-4 text-center md:text-left">
+        <h1 className="text-4xl font-bold mb-4 text-center md:text-left">
           🏫 Involvement
-        </div>
-        <div className="flex flex-col max-w-3xl">
+        </h1>
+        <div className="flex flex-col max-w-xl">
           {involvements.map((exp, idx) => (
             <ExperienceItem experience={exp} key={idx} />
           ))}

@@ -5,7 +5,7 @@ const LeftArrowButton = () => {
   const { theme } = useContext(ThemeStateContext);
   return (
     <button
-      className={`px-2 ${theme.darkMode ? "text-white" : "text-black"} ${
+      className={`px-2 pb-1 ${theme.darkMode ? "text-white" : "text-black"} ${
         theme.darkMode ? "border-white" : "border-black"
       } border-2 rounded-full group hover:${
         theme.darkMode ? "bg-white" : "bg-black"

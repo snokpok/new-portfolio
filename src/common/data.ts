@@ -93,7 +93,6 @@ export const involvements: IExperienceItem[] = [
     `,
     duration: {
       from: new Date("Sep 2021"),
-      to: new Date(),
     },
   },
   {
