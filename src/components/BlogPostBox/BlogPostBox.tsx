@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BlogPost } from "../../common/interfaces";
-import moment from "moment";
 import { dateToText } from "../../common/markdown.util";
 
 export interface BlogPostBoxProps extends BlogPost {}

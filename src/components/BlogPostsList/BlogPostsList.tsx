@@ -8,7 +8,7 @@ interface Props {
 
 function BlogPostsList({ data }: Props) {
   return (
-    <div className="flex flex-col items-center py-10">
+    <div className="flex flex-col items-center py-10 w-4/5 sm:w-full">
       {data.map(({ title, date, assetUrl, idBlurb, draft }, index) => {
         if (draft) return null;
         return (
