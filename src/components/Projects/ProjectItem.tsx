@@ -27,12 +27,12 @@ function ProjectItem({ project }: Props) {
         className="rounded-t-md"
       />
       <div className="flex flex-col p-7 pt-1 h-full">
-        <div className="font-bold font-mono border-b-2 p-2 text-xl xl:text-2xl md:text-3xl">
+        <h1 className="font-bold font-mono border-b-2 p-2 text-xl xl:text-2xl md:text-3xl">
           {project.name}
-        </div>
-        <div className="w-full h-4/5 p-2 text-xl xl:text-base md:text-2xl">
+        </h1>
+        <p className="w-full h-4/5 p-2 text-xl xl:text-base md:text-xl">
           {project.description}
-        </div>
+        </p>
         <div className="w-full my-4 flex items-center justify-center flex-wrap">
           {project.technologies
             ?.map((tid) => technologiesIdAssetMap[tid])

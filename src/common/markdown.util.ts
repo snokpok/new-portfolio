@@ -39,5 +39,5 @@ export const snakeCase = (text: string) => {
 
 // wrapper
 export const dateToText = (date: Date) => {
-  return moment(date).format("MMMM Do, YYYY");
+  return moment(date).format("MM/YYYY");
 };

@@ -24,8 +24,8 @@ function ExperienceItem({ experience }: Props) {
       <div className="flex flex-col justify-center w-full text-center sm:text-left gap-1">
         <h1 className="font-extrabold text-3xl">{experience.corp}</h1>
         <h2 className="italic">{experience.position}</h2>
-        {experience.duration && (
-          <p>
+        {experience.duration !== undefined && (
+          <p className="text-gray-300 text-sm">
             {moment(experience.duration.from).format("MMM YYYY")} -{" "}
             {experience.duration?.to
               ? moment(experience.duration.to).format("MMM YYYY")
