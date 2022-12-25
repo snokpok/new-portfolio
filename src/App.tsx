@@ -1,7 +1,6 @@
 import React, { ReactElement } from "react";
 import { Helmet } from "react-helmet";
 import { Route, Switch } from "react-router";
-import "./App.css";
 import { SCPGO_TOKEN } from "./common/env";
 import { ThemeStateContext, ThemeState } from "./common/theme.context";
 import { UserContext, UserState } from "./common/user.context";
@@ -24,7 +23,7 @@ function App(): ReactElement {
       <ThemeStateContext.Provider value={{ theme, setTheme }}>
         <div
           className={`min-w-screen min-h-screen font-rubik ${
-            theme.darkMode && "bg-black text-white"
+            theme.darkMode ? "bg-black text-white" : "bg-white text-black"
           }`}
         >
           <Switch>

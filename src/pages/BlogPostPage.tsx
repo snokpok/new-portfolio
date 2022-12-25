@@ -122,7 +122,9 @@ function BlogPostPage() {
                     return (
                       <code
                         {...props}
-                        className="text-red-600 bg-gray-800 px-1 ml-1"
+                        className={`text-red-600 ${
+                          darkMode ? "bg-gray-800" : "bg-gray-200"
+                        } px-1 ml-1`}
                       >
                         {children}
                       </code>
@@ -143,7 +145,11 @@ function BlogPostPage() {
                 ),
                 blockquote: ({ children }) => (
                   <div className="border-l-2 border-gray-400 my-3 ml-1 sm:ml-4">
-                    <p className="pl-0 sm:pl-5 leading-8 font-mono italic font-bold text-gray-300">
+                    <p
+                      className={`pl-0 sm:pl-2 leading-2 font-mono italic font-bold ${
+                        darkMode ? "text-gray-300" : "text-gray-800"
+                      }`}
+                    >
                       {children}
                     </p>
                   </div>
