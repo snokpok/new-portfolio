@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Markdown from "react-markdown";
 import { Link, useParams } from "react-router-dom";
-import { allBlogPostsMetadata } from "../common/blog";
-import { BlogPost } from "../common/interfaces";
+import { BlogPostSanity } from "../common/interfaces";
 import { InlineLink } from "../components/Miscs/InlineLink";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
@@ -16,6 +15,7 @@ import {
 } from "../common/markdown.util";
 import { ThemeStateContext } from "../common/theme.context";
 import SyntaxHighlighter from "react-syntax-highlighter";
+import { getBlogPostSingle } from "../common/blog";
 
 interface TOCProps {
   data: TOC;
@@ -36,22 +36,19 @@ const TableOfContentBlog = ({ data }: TOCProps) => {
 function BlogPostPage() {
   const [content, setContent] = useState("");
   const params = useParams();
-  const [metaBlog, setMetaBlog] = useState<BlogPost | null>(null);
+  const [metaBlog, setMetaBlog] = useState<BlogPostSanity | null>(null);
   const {
     theme: { darkMode },
   } = useContext(ThemeStateContext);
 
   useEffect(() => {
-    const id = (params as any).id;
-    const metaBlog = allBlogPostsMetadata.find((item) => item.idBlurb === id);
-    if (!metaBlog) return;
-    setMetaBlog(metaBlog);
-
-    fetch(metaBlog.assetUrl)
-      .then((res) => res.text())
-      .then((text) => {
-        setContent(text);
-      });
+    const slug = (params as any).id;
+    getBlogPostSingle(slug)
+      .then((metaBlog) => {
+        setMetaBlog(metaBlog);
+        setContent(metaBlog?.body ?? "");
+      })
+      .catch((e) => console.error(e));
   }, []);
 
   return (
@@ -73,7 +70,7 @@ function BlogPostPage() {
                 darkMode ? "text-gray-300" : "text-gray-800"
               } italic`}
             >
-              {metaBlog?.date ? dateToText(metaBlog.date) : null}
+              {metaBlog?.publishedAt ? dateToText(metaBlog.publishedAt) : null}
             </h2>
           </div>
           <hr className="w-1/6" />

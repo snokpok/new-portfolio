@@ -1,23 +1,31 @@
-import React from "react";
-import { BlogPost } from "../../common/interfaces";
+import { useEffect, useState } from "react";
+import { getListBlogs } from "../../common/blog";
+import { BlogPostSanity } from "../../common/interfaces";
 import BlogPostBox from "../BlogPostBox/BlogPostBox";
+import { Text } from "../Typography";
 
-interface Props {
-  data: BlogPost[];
-}
+function BlogPostsList() {
+  const [blogs, setBlog] = useState<BlogPostSanity[] | null>(null);
 
-function BlogPostsList({ data }: Props) {
+  useEffect(() => {
+    getListBlogs()
+      .then((items) => {
+        setBlog(items);
+      })
+      .catch((e) => console.error(e));
+  }, []);
+
   return (
     <div className="flex flex-col items-center py-10 w-4/5 sm:w-full">
-      {data.map(({ title, date, assetUrl, idBlurb, draft }, index) => {
-        if (draft) return null;
+      {blogs === null && <Text>Loading...</Text>}
+      {blogs?.map(({ title, publishedAt, slug, author }, index) => {
         return (
           <div className="py-2" key={index}>
             <BlogPostBox
               title={title}
-              date={date}
-              assetUrl={assetUrl}
-              idBlurb={idBlurb}
+              publishedAt={publishedAt}
+              slug={slug}
+              author={author}
             />
           </div>
         );

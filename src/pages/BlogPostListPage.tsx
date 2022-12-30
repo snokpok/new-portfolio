@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { allBlogPostsMetadata } from "../common/blog";
 import { ThemeStateContext } from "../common/theme.context";
 import BlogPostsList from "../components/BlogPostsList/BlogPostsList";
 import "../animations.module.css";
@@ -22,7 +21,7 @@ export default function BlogPostListPage() {
         My various thoughts, devlogs, etc...
       </h2>
       <div className={styles.blogPostList}>
-        <BlogPostsList data={allBlogPostsMetadata} />
+        <BlogPostsList />
       </div>
     </div>
   );

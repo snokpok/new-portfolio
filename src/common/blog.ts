@@ -1,31 +1,60 @@
-import { BlogPost } from "./interfaces";
+import { BlogPostSanity } from "./interfaces";
+import sanityClient from "@sanity/client";
+import { SANITY_DATASET, SANITY_PROJECT_ID } from "./env";
 
-export const allBlogPostsMetadata: BlogPost[] = [
-  {
-    title: `"The worst thing I've ever paid for is a CS degree"`,
-    date: new Date("2021-10-27"),
-    assetUrl: "/content/the-worst-thing-ive-ever-paid-for.md",
-    idBlurb: "the-worst-thing-ive-ever-paid-for",
-  },
-  {
-    title: `HibiscusDevLog[0]: history down the drain, dead ideas`,
-    date: new Date("2022-05-02"),
-    assetUrl: "/content/hibiscus-devlog0.md",
-    draft: true,
-    idBlurb: "hibiscus-devlog0",
-  },
-  {
-    title: `HibiscusDevLog[1]: upholding standards, iPad sketches and birth of an idea`,
-    date: new Date("2022-11-28"),
-    assetUrl: "/content/hibiscus-devlog1.md",
-    draft: true,
-    idBlurb: "hibiscus-devlog1",
-  },
-  {
-    title: `HibiscusDevLog[2]: building a team, org culture`,
-    date: new Date("2022-11-28"),
-    assetUrl: "/content/hibiscus-devlog2.md",
-    draft: true,
-    idBlurb: "hibiscus-devlog2",
-  },
-];
+const sanity = sanityClient({
+  projectId: SANITY_PROJECT_ID,
+  dataset: SANITY_DATASET,
+  useCdn: true,
+});
+
+export const getBlogPostSingle = async (
+  slug: string
+): Promise<BlogPostSanity | null> => {
+  const items = await sanity.fetch(`
+    *[_type == "post" && slug.current == "${slug}"]{
+      title,
+      body,
+      publishedAt,
+      author -> {
+        name,
+        description,
+      },
+      slug
+    }
+  `);
+  if (items.length === 0) return null;
+  const res = items[0];
+  return {
+    title: res.title,
+    body: res.body,
+    publishedAt: res.publishedAt,
+    author: {
+      name: res.author.name,
+      description: res.author.description,
+    },
+    slug: res.slug.current,
+  };
+};
+
+export const getListBlogs = async (): Promise<BlogPostSanity[]> => {
+  const res = await sanity.fetch(`
+    *[_type == "post"]{
+      title,
+      publishedAt,
+      author -> {
+        name,
+      },
+      slug
+    }
+  `);
+  return res.map((item: any) => ({
+    title: item.title,
+    publishedAt: item.publishedAt,
+    author: {
+      name: item.author.name,
+      description: item.author.description,
+    },
+    slug: item.slug.current,
+  }));
+};
