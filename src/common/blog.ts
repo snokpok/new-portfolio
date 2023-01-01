@@ -46,7 +46,7 @@ export const getListBlogs = async (): Promise<BlogPostSanity[]> => {
         name,
       },
       slug
-    }
+    } | order(publishedAt desc)
   `);
   return res.map((item: any) => ({
     title: item.title,
