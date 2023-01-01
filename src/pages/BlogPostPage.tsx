@@ -157,6 +157,19 @@ function BlogPostPage() {
                     {children}
                   </InlineLink>
                 ),
+                ul: ({ node, className, children, ...props }) => (
+                  <ul {...props} className="list-disc">
+                    {children}
+                  </ul>
+                ),
+                ol: ({ node, className, children, ...props }) => (
+                  <ol {...props} className="list-decimal">
+                    {children}
+                  </ol>
+                ),
+                li: ({ node, className, children, ...props }) => (
+                  <li {...props}>{children}</li>
+                ),
                 code: ({ node, className, inline, children, ...props }) => {
                   if (inline) {
                     return (
@@ -170,12 +183,15 @@ function BlogPostPage() {
                       </code>
                     );
                   }
+                  const match = /language-(\w+)/.exec(className || "");
                   return (
-                    <code className="my-8 flex justify-center">
-                      <SyntaxHighlighter language="cpp">
-                        {children.toString()}
-                      </SyntaxHighlighter>
-                    </code>
+                    match && (
+                      <code className="my-8 text-sm flex justify-center">
+                        <SyntaxHighlighter language={match[1]}>
+                          {children.toString()}
+                        </SyntaxHighlighter>
+                      </code>
+                    )
                   );
                 },
                 p: ({ node, className, children, ...props }) => (
