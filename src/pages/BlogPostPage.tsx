@@ -109,6 +109,49 @@ function BlogPostPage() {
                     </Link>
                   );
                 },
+                h3: ({ node, className, children, ...props }) => {
+                  const id = snakeCase(children.toString());
+                  return (
+                    <Link to={`#${id}`} target="_self">
+                      <h3
+                        {...props}
+                        className="pl-5 text-lg py-4 font-extrabold font-mono"
+                        id={id}
+                      >
+                        <span className="text-yellow-500">###</span> {children}
+                      </h3>
+                    </Link>
+                  );
+                },
+                h4: ({ node, className, children, ...props }) => {
+                  const id = snakeCase(children.toString());
+                  return (
+                    <Link to={`#${id}`} target="_self">
+                      <h4
+                        {...props}
+                        className="pl-5 text-md py-4 font-extrabold font-mono"
+                        id={id}
+                      >
+                        <span className="text-red-500">####</span> {children}
+                      </h4>
+                    </Link>
+                  );
+                },
+                h5: ({ node, className, children, ...props }) => {
+                  const id = snakeCase(children.toString());
+                  return (
+                    <Link to={`#${id}`} target="_self">
+                      <h4
+                        {...props}
+                        className="pl-5 text-base py-4 font-extrabold font-mono"
+                        id={id}
+                      >
+                        <span className="text-indigo-500">#####</span>{" "}
+                        {children}
+                      </h4>
+                    </Link>
+                  );
+                },
                 a: ({ node, className, children, ...props }) => (
                   <InlineLink {...props} target="_blank">
                     {children}
