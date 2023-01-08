@@ -4,6 +4,13 @@ import moment from "moment";
 export const commonmarkReader = new commonmark.Parser();
 
 export type TOC = { text: string; level: number }[];
+export const headingLevelColors = {
+  1: "green",
+  2: "blue",
+  3: "yellow",
+  4: "red",
+  5: "indigo",
+};
 
 export const getTocFromMDText = (text: string) => {
   const tree = commonmarkReader.parse(text);
@@ -19,7 +26,7 @@ export const getTocFromMDText = (text: string) => {
             toc.push({ text, level: event.node.level }); // only take non-empty headings
           }
           break;
-        } else if (event.node.type == "text") {
+        } else if (event.node.type === "text") {
           text += event.node.literal;
         }
       }
@@ -32,7 +39,7 @@ export const snakeCase = (text: string) => {
   return text
     .toLowerCase()
     .trim()
-    .replaceAll(/(\?|\!|\:|\')/g, "")
+    .replaceAll(/(\?|!|:|')/g, "")
     .split(" ")
     .join("-");
 };

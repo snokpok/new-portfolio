@@ -10,6 +10,7 @@ import LeftArrowButton from "../components/LeftArrowButton";
 import {
   dateToText,
   getTocFromMDText,
+  headingLevelColors,
   snakeCase,
   TOC,
 } from "../common/markdown.util";
@@ -24,11 +25,20 @@ interface TOCProps {
 const TableOfContentBlog = ({ data }: TOCProps) => {
   return (
     <div className="flex flex-col">
-      {data.map((item, id) => (
-        <InlineLink href={`#${snakeCase(item.text)}`} key={id}>
-          {item.text}
-        </InlineLink>
-      ))}
+      {data.map((item, id) => {
+        return (
+          <InlineLink
+            style={{ paddingLeft: `${(item.level - 1) * 10}px` }}
+            href={`#${snakeCase(item.text)}`}
+            key={id}
+            color={
+              headingLevelColors[item.level as keyof typeof headingLevelColors]
+            }
+          >
+            {item.text}
+          </InlineLink>
+        );
+      })}
     </div>
   );
 };
@@ -90,7 +100,10 @@ function BlogPostPage() {
                         className="pl-3 text-xl sm:text-2xl py-4 font-extrabold font-mono"
                         id={id}
                       >
-                        <span className="text-green-500">#</span> {children}
+                        <span className={`text-${headingLevelColors[1]}-500`}>
+                          #
+                        </span>{" "}
+                        {children}
                       </h1>
                     </Link>
                   );
@@ -104,7 +117,10 @@ function BlogPostPage() {
                         className="pl-5 text-base sm:text-xl py-4 font-extrabold font-mono"
                         id={id}
                       >
-                        <span className="text-blue-500">##</span> {children}
+                        <span className={`text-${headingLevelColors[2]}-500`}>
+                          ##
+                        </span>{" "}
+                        {children}
                       </h2>
                     </Link>
                   );
@@ -118,7 +134,10 @@ function BlogPostPage() {
                         className="pl-5 text-sm sm:text-lg py-4 font-extrabold font-mono"
                         id={id}
                       >
-                        <span className="text-yellow-500">###</span> {children}
+                        <span className={`text-${headingLevelColors[3]}-500`}>
+                          ###
+                        </span>{" "}
+                        {children}
                       </h3>
                     </Link>
                   );
@@ -132,7 +151,10 @@ function BlogPostPage() {
                         className="pl-5 text-xs sm:text-md py-4 font-extrabold font-mono"
                         id={id}
                       >
-                        <span className="text-red-500">####</span> {children}
+                        <span className={`text-${headingLevelColors[4]}-500`}>
+                          ####
+                        </span>{" "}
+                        {children}
                       </h4>
                     </Link>
                   );
@@ -146,7 +168,9 @@ function BlogPostPage() {
                         className="pl-5 text-xs sm:text-base py-4 font-extrabold font-mono"
                         id={id}
                       >
-                        <span className="text-indigo-500">#####</span>{" "}
+                        <span className={`text-${headingLevelColors[5]}-500`}>
+                          #####
+                        </span>{" "}
                         {children}
                       </h4>
                     </Link>

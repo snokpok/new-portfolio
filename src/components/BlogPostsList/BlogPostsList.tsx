@@ -16,7 +16,7 @@ function BlogPostsList() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center py-10 w-4/5 sm:w-full">
+    <div className="flex flex-col py-10 w-4/5 sm:w-full">
       {blogs === null && <Text>Loading...</Text>}
       {blogs?.map(({ title, publishedAt, slug, author }, index) => {
         return (

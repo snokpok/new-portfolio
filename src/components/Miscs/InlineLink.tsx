@@ -3,6 +3,7 @@ import { ThemeStateContext } from "../../common/theme.context";
 
 type InlineLinkProps = React.AnchorHTMLAttributes<any> & {
   showArrowOnHover?: boolean;
+  color?: string;
 };
 
 export const InlineLink: React.FC<InlineLinkProps> = (
@@ -14,13 +15,15 @@ export const InlineLink: React.FC<InlineLinkProps> = (
   const handleMouseOut = () => setHover(false);
   const handleMouseIn = () => setHover(true);
 
+  const color = props.color ?? "green";
+
   return (
     <a
       {...props}
       className={`group ${
         theme.darkMode
-          ? "hover:bg-green-600 text-green-400"
-          : "hover:bg-green-800 text-green-700"
+          ? `hover:bg-${color}-600 text-${color}-400`
+          : `hover:bg-${color}-800 text-${color}-700`
       } hover:text-white transition font-bold`}
       onMouseEnter={handleMouseIn}
       onMouseLeave={handleMouseOut}
