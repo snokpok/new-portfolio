@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { BLOG_LINK, RESUME_LINK } from "../../common/data";
+import { RESUME_LINK } from "../../common/data";
 import { ThemeStateContext } from "../../common/theme.context";
 import DarkModeWidget from "../Miscs/DarkModeWidget";
 
