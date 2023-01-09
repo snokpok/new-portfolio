@@ -61,6 +61,28 @@ function BlogPostPage() {
       .catch((e) => console.error(e));
   }, []);
 
+  // generate CSS tailwind tag
+  const getTextName = (level: number) => {
+    switch (level) {
+      case 1:
+        return `text-green-500`;
+      case 2:
+        return `text-blue-500`;
+      case 3:
+        return `text-yellow-500`;
+      case 4:
+        return `text-red-500`;
+      case 5:
+        return `text-indigo-500`;
+      default:
+        return "";
+    }
+  };
+
+  const hashTagsFromLevel = (level: number) => {
+    return Array.from(Array(level).keys()).reduce((prev) => prev + "#", "");
+  };
+
   return (
     <>
       <Helmet>
@@ -91,7 +113,7 @@ function BlogPostPage() {
           <div className="flex flex-col max-w-full leading-10">
             <Markdown
               components={{
-                h1: ({ node, className, children, ...props }) => {
+                h1: ({ node, className, children, level, ...props }) => {
                   const id = snakeCase(children.toString());
                   return (
                     <Link to={`#${id}`} target="_self">
@@ -100,15 +122,15 @@ function BlogPostPage() {
                         className="pl-3 text-xl sm:text-2xl py-4 font-extrabold font-mono"
                         id={id}
                       >
-                        <span className={`text-${headingLevelColors[1]}-500`}>
-                          #
+                        <span className={getTextName(level)}>
+                          {hashTagsFromLevel(level)}
                         </span>{" "}
                         {children}
                       </h1>
                     </Link>
                   );
                 },
-                h2: ({ node, className, children, ...props }) => {
+                h2: ({ node, className, children, level, ...props }) => {
                   const id = snakeCase(children.toString());
                   return (
                     <Link to={`#${id}`} target="_self">
@@ -117,15 +139,15 @@ function BlogPostPage() {
                         className="pl-5 text-base sm:text-xl py-4 font-extrabold font-mono"
                         id={id}
                       >
-                        <span className={`text-${headingLevelColors[2]}-500`}>
-                          ##
+                        <span className={getTextName(level)}>
+                          {hashTagsFromLevel(level)}
                         </span>{" "}
                         {children}
                       </h2>
                     </Link>
                   );
                 },
-                h3: ({ node, className, children, ...props }) => {
+                h3: ({ node, className, children, level, ...props }) => {
                   const id = snakeCase(children.toString());
                   return (
                     <Link to={`#${id}`} target="_self">
@@ -134,15 +156,15 @@ function BlogPostPage() {
                         className="pl-5 text-sm sm:text-lg py-4 font-extrabold font-mono"
                         id={id}
                       >
-                        <span className={`text-${headingLevelColors[3]}-500`}>
-                          ###
+                        <span className={getTextName(level)}>
+                          {hashTagsFromLevel(level)}
                         </span>{" "}
                         {children}
                       </h3>
                     </Link>
                   );
                 },
-                h4: ({ node, className, children, ...props }) => {
+                h4: ({ node, className, children, level, ...props }) => {
                   const id = snakeCase(children.toString());
                   return (
                     <Link to={`#${id}`} target="_self">
@@ -151,15 +173,15 @@ function BlogPostPage() {
                         className="pl-5 text-xs sm:text-md py-4 font-extrabold font-mono"
                         id={id}
                       >
-                        <span className={`text-${headingLevelColors[4]}-500`}>
-                          ####
+                        <span className={getTextName(level)}>
+                          {hashTagsFromLevel(level)}
                         </span>{" "}
                         {children}
                       </h4>
                     </Link>
                   );
                 },
-                h5: ({ node, className, children, ...props }) => {
+                h5: ({ node, className, children, level, ...props }) => {
                   const id = snakeCase(children.toString());
                   return (
                     <Link to={`#${id}`} target="_self">
@@ -168,8 +190,8 @@ function BlogPostPage() {
                         className="pl-5 text-xs sm:text-base py-4 font-extrabold font-mono"
                         id={id}
                       >
-                        <span className={`text-${headingLevelColors[5]}-500`}>
-                          #####
+                        <span className={getTextName(level)}>
+                          {hashTagsFromLevel(level)}
                         </span>{" "}
                         {children}
                       </h4>
