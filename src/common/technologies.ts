@@ -49,4 +49,12 @@ export const technologiesIdAssetMap: Record<string, Technology> = {
     displayName: "JavaScript",
     assetLogoPathPublic: "/technologies/javascript.png",
   },
+  "styled-components": {
+    displayName: "styled-components",
+    assetLogoPathPublic: "/technologies/styled-components.png",
+  },
+  aws: {
+    displayName: "AWS",
+    assetLogoPathPublic: "/technologies/aws.jpeg",
+  },
 };

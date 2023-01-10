@@ -6,6 +6,15 @@ export const RESUME_LINK =
 export const BLOG_LINK = "https://blog.vuvincent.com";
 
 export const projectsList: Record<string, IProjectItem> = {
+  hibiscus: {
+    name: "Hibiscus",
+    description:
+      "All-in-one hackathon platform for HackSC, featuring a multi-tenant SSO for participant login, Hackform--a Typeform clone--for forms and hackathon applications, and an intuitive participant dashboard/portal.",
+    link: "https://github.com/HackSC/hibiscus",
+    key: "hibiscus",
+    imgFormat: "png",
+    technologies: ["nextjs", "react", "docker", "styled-components", "aws"],
+  },
   scp: {
     name: "Spotify Currently Playing",
     description:
