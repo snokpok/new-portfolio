@@ -19,18 +19,19 @@ function ProjectItem({ project }: Props) {
   return (
     <div
       key={project.key}
-      className="flex flex-col max-w-xl border-2 m-6 w-96 rounded-lg xl:hover:rotate-1 xl:hover:scale-105 transform duration-150"
+      className="flex flex-col max-w-xl border-2 m-6 w-96 rounded-lg xl:hover:scale-105 transform duration-150"
+      style={{ height: "min-content" }}
     >
       <img
         src={`projects/${project.key}.${project.imgFormat}`}
         alt={`Project ${project.key}`}
         className="rounded-t-md"
       />
-      <div className="flex flex-col p-7 pt-1 h-full">
+      <div className="flex flex-col p-7 pt-1">
         <h1 className="font-bold font-mono border-b-2 p-2 text-xl xl:text-2xl md:text-3xl">
           {project.name}
         </h1>
-        <p className="w-full h-4/5 p-2 text-xl xl:text-base md:text-xl">
+        <p className="w-full p-2 text-xl xl:text-base md:text-xl">
           {project.description}
         </p>
         <div className="w-full my-4 flex items-center justify-center flex-wrap">

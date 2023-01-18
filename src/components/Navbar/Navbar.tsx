@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { RESUME_LINK } from "../../common/data";
 import { ThemeStateContext } from "../../common/theme.context";
 import DarkModeWidget from "../Miscs/DarkModeWidget";
 
@@ -43,9 +42,6 @@ function Navbar({ extraElems }: Props) {
         <Link to="/blog">
           <NavbarLink>Blog 📖</NavbarLink>
         </Link>
-        <a href={RESUME_LINK} target="_blank" rel="noreferrer">
-          <ExternalLink>Resume</ExternalLink>
-        </a>
       </div>
       <div className="flex items-center">
         <div>{extraElems}</div>

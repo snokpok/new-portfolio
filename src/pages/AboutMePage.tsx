@@ -11,21 +11,15 @@ function AboutMePage() {
   const interests: Interest[] = [
     {
       title: "🔨 Startups",
-      description: `It's not interesting
-  being in a cocoon full of comfort because nothing grows out of it. I love
-  startups and solo creators who build products that has the potential to
-  disrupt the market. I have always put innovation first, and I strive to
-  create an environment where that can be grown and fostered.`,
+      description: `I love startups and solo creators who build products that has the potential to
+  disrupt the market. I have always put innovation first, and I strive to create an environment where that can be grown and fostered.`,
     },
     {
       title: "📊 Cloud infrastructure and observability",
       description: ` I have a
   great passion for developing scalable microservices and infrastructures on
   the cloud, where I get a lot of experience doing this at HackSC building
-  hackathon portals, services and all. Observability became an extremely
-  important topic as I continue scaling our tech stack, and I have always
-  been focused on finding great ways to do logging, tracing and APMs ever
-  since. Have experience playing around with observability tools such as
+  hackathon portals, services and all. Have experience playing around with observability tools such as
   Grafana, Prometheus, and New Relic.`,
     },
     {
